@@ -14,17 +14,6 @@
     margin-bottom: 3rem;
     color: var(--color-primary);
 }
-.title:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #ff6b6b, #5e60ce);
-    border-radius: 2px;
-}
 
 .certificatesWrapper {
     display: flex;
