@@ -1,0 +1,152 @@
+@import "../../vars.css";
+
+.container {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    margin-top: 80px;
+    padding: 60px 0;
+    width: 100%;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.text h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.text h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-bg);
+    border-radius: 2px;
+}
+
+.text p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 24px;
+    padding: 0;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.3s ease;
+}
+
+.link:hover {
+    transform: translateX(5px);
+}
+
+.link img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.link a {
+    color: var(--color-bg);
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+
+.link a:hover {
+    opacity: 0.8;
+}
+
+.link a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--color-bg);
+    transition: width 0.3s ease;
+}
+
+.link a:hover:after {
+    width: 100%;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 830px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .text h2 {
+        font-size: 2.25rem;
+    }
+
+    .text h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .text p {
+        font-size: 1.125rem;
+    }
+
+    .links {
+        width: 100%;
+        align-items: center;
+    }
+
+    .link {
+        width: 100%;
+        max-width: 300px;
+        justify-content: flex-start;
+    }
+
+    .link img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .link a {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .text h2 {
+        font-size: 1.75rem;
+    }
+
+    .text p {
+        font-size: 1rem;
+    }
+}

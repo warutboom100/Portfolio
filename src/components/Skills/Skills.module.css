@@ -1,0 +1,145 @@
+.container {
+    padding: 60px 10%;
+    background-color: var(--color-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.skillsContainer {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.skillsContainer:before,
+.skillsContainer:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.skillsContainer:before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg), transparent);
+}
+
+.skillsContainer:after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg), transparent);
+}
+
+.skillsRow {
+    display: flex;
+    gap: 40px;
+    width: fit-content; /* Make sure it fits the content */
+    --animation-duration: 50s;
+    --animation-duration1: 40s;
+}
+
+.scrollLeftAnimation {
+    animation: scroll-left var(--animation-duration) linear infinite;
+}
+
+.scrollRightAnimation {
+    animation: scroll-right var(--animation-duration1) linear infinite;
+}
+.skill {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+.skillImageContainer {
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: #ffffff;
+    padding: 12px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.skillImageContainer:hover {
+    transform: translateY(-5px);
+}
+
+.skill img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.skill p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50%)); /* Move by half the width */
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(calc(-50%));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Optional: For better performance on browsers that support it */
+@media (prefers-reduced-motion: no-preference) {
+
+    .scrollLeftAnimation,
+    .scrollRightAnimation {
+        will-change: transform;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .skillsRow {
+        --animation-duration: 40s;
+        --animation-duration1: 30s;
+        gap: 10px;
+    }
+    .skillImageContainer {
+        width: 4rem;
+        height: 4rem;
+    }
+    .skill p {
+        font-size: 1rem;
+            
+    }
+        .skillsContainer:before {
+            left: 0;
+            background: none;
+        }
+    
+        .skillsContainer:after {
+            right: 0;
+            background: none;
+        }
+}

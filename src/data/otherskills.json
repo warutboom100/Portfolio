@@ -1,0 +1,22 @@
+[
+
+
+  {
+    "title": "AWS",
+    "imageSrc": "skills/aws.png"
+  },
+  {
+    "title": "GCP",
+    "imageSrc": "skills/google.png"
+  },{
+    "title": "Docker",
+    "imageSrc": "skills/docker.png"
+  },{
+    "title": "Arduino",
+    "imageSrc": "skills/arduino.svg"
+  }
+  ,{
+    "title": "Pytorch",
+    "imageSrc": "skills/pytorch.png"
+  }
+]

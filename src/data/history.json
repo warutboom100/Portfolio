@@ -1,0 +1,35 @@
+[
+  {
+    "id":1,
+    "position": "Software Developer",
+    "name": "Freelance",
+    "Date": "Jan 2024 - Present",
+    "text": ["- Designed the Smart Factory web-based learning platform","- Built a hospital porter location tracking system available on both mobile and web application","- Designed a responsive front-end interface for an AI-powered application integrate with Chainlit chatbot","- Created ui dashboard for data visualization of energy in factory"],
+    "image": "history/freelance.png"
+  },
+  {
+    "id":2,
+    "position": "Control Engineer",
+    "name": "Freelance",
+    "Date": "Jun - Dec 2024",
+    "text": ["- Created a food sterilization system using PLC technology with temperature and pressure controls","- Built a IoT system to collect machine and robot sensor data for predictive maintenance to prevent breakdowns."],
+    "image": "history/control.png"
+  },
+  {
+    "id":3,
+    "position": "Robotic/PLC Engineer",
+    "name": "Techman Electronics",
+    "Date": "Aug - Dec 2023",
+    "text": ["- Designed and implement software solutions for robots, PLC and wiring systems for automation,","- Applied IoT technologies to reduce machine downtime, leveraging data-driven insights to enhance operational efficiency"],
+    "image": "history/techman.jpg"
+  },
+  {
+    "id":4,
+    "position": "Software Engineer Intern",
+    "name": "Hospital Automation Research Center @FIBO",
+    "Date": "Jun - Nov 2022",
+    "text": ["- Research on IoT-based indoor localization systems with mobile applications","- Developed software for mobile robots, Improve their functionality performance the integration of advanced algorithms and user interface improvements"],
+    
+    "image": "history/hac.png"
+  }
+]

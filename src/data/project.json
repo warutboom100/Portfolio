@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Chat GPT Canvas Clone App with React.JS",
+    "description": "A project to clone ChatGPT Canvas, primarily focused on practicing document editing functionality on a web app. In the future, it will integrate with an AI agent to assist with document writing.",
+    "image": "projects/canvas.png",
+    "link": "https://github.com/warutboom100/Chatgpt-canvas-clone-v0.01"
+  },
+  {
+    "title": "Dashboard Robot data visualization v.beta",
+    "description": "An IoT system for retrieving sensor data from a robot and displaying it on a web dashboard. The system utilizes MQTT broker, MongoDB, FastAPI, and ReactJS.",
+    "image": "projects/dashboard.png",
+    "link": "https://github.com/warutboom100/Dashboard_Robot_Energy"
+  },
+  {
+    "title": "Chainlit chatbot with ReactJS v.beta",
+    "description": "The @chainlit/react-client package provides a set of React hooks as well as an API client to connect to your Chainlit application from any React application. The package includes hooks for managing chat sessions, messages, data, and interactions.",
+    "image": "projects/chatbot.png",
+    "link": "https://github.com/warutboom100/Chainlit-Clone"
+  },
+  {
+    "title": "Indoor localization with Mobile Application",
+    "description": "A system for testing indoor positioning using mobile phones and a web application to display user locations. Developed with Flutter and utilizing Bluetooth signals for position estimation.",
+    "image": "projects/indoor.png", 
+    "link": "https://github.com/warutboom100/BVER_DEMO"
+  },
+  {
+    "title": "Binny_RewardApp with Flutter",
+    "description": "My project for practicing responsive UI design in the context of an online shopping app.",
+    "image": "projects/binny.png",
+    "link": "https://github.com/warutboom100/Binny_RewardApp"
+  },
+  {
+    "title": "Moodie - Mood Diary With Lock Clone App",
+    "description": "Record your feelings about your day in a variety of ways build in Flutter framework.",
+    "image": "projects/moodie.png",
+    "link": "https://github.com/warutboom100/Clone_MoodieApp"
+  }
+]

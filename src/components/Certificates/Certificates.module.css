@@ -1,0 +1,225 @@
+@import "../../vars.css";
+
+.container {
+    margin-top: 76px;
+    color: var(--color-text);
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-primary);
+}
+.title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #5e60ce);
+    border-radius: 2px;
+}
+
+.certificatesWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.certificateDisplay {
+    width: 100%;
+}
+
+.certificateCard {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificateCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.certificateImageContainer {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.certificateImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.certificateImageContainer:hover .certificateImage {
+    transform: scale(1.05);
+}
+
+.certificateOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificateImageContainer:hover .certificateOverlay {
+    opacity: 1;
+}
+
+.viewCertificate {
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.certificateInfo {
+    padding: 1.5rem;
+}
+
+.certificateTitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.certificateOrg {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.certificateDate {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+.certificateId {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.skillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skill {
+    background: #f1f1f1;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #555;
+    transition: background 0.3s ease;
+}
+
+.skill:hover {
+    background: #e1e1e1;
+}
+
+.certificateThumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.thumbnail {
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.7;
+}
+
+.thumbnail:hover {
+    transform: translateY(-5px);
+    opacity: 0.9;
+}
+
+.activeThumbnail {
+    border: 3px solid #5e60ce;
+    opacity: 1;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.thumbnail span {
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: #f8f8f8;
+}
+
+@media screen and (min-width: 768px) {
+    .certificateCard {
+        flex-direction: row;
+        max-height: 400px;
+    }
+
+    .certificateImageContainer {
+        width: 65%;
+        height: auto;
+    }
+
+    .certificateInfo {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .certificateImageContainer {
+        height: 250px;
+    }
+
+    .certificateThumbnails {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .thumbnail {
+        width: 120px;
+    }
+}
