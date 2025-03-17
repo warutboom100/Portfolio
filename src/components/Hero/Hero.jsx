@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './Hero.module.css';
+import resumePDF from "../../../assets/Warut_Resume_Software_Developer.pdf";
+
 import { getImageUrl } from "../../utils";
 export const Hero = () => {
   return (
@@ -22,7 +24,7 @@ export const Hero = () => {
           </span>
         </div>
         
-        <a href="mailto:myemail@email.com" className={styles.contactBtn}>
+        <a href={resumePDF} download="Warut_Resume_Software_Developer.pdf" className={styles.contactBtn}>
           Download Resume
         </a>
       </div>
