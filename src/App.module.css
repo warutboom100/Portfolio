@@ -1,7 +1,151 @@
 @import "./vars.css";
 
-.App{
+.App {
     background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
     width: 100%;
-    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Scroll progress bar */
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    transform-origin: left center;
+    transform: scaleX(0);
+    background: linear-gradient(90deg, #2563eb, #7c3aed 50%, #db2777);
+    z-index: 100;
+    will-change: transform;
+    pointer-events: none;
+    transition: transform 0.05s linear;
+}
+
+/* Ambient background */
+.ambient {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.55;
+    will-change: transform;
+}
+
+.orbA {
+    top: -10%;
+    left: -8%;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.55), transparent 70%);
+}
+
+.orbB {
+    top: 38%;
+    right: -12%;
+    width: 460px;
+    height: 460px;
+    background: radial-gradient(circle, rgba(219, 39, 119, 0.40), transparent 70%);
+}
+
+.orbC {
+    bottom: -8%;
+    left: 30%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.42), transparent 70%);
+}
+
+.grain {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(rgba(10, 10, 10, 0.05) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .orbA {
+        animation: drift-a 22s ease-in-out infinite alternate;
+    }
+
+    .orbB {
+        animation: drift-b 28s ease-in-out infinite alternate;
+    }
+
+    .orbC {
+        animation: drift-c 32s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes drift-a {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(180px, 140px) scale(1.12); }
+    100% { transform: translate(80px, 240px) scale(0.92); }
+}
+
+@keyframes drift-b {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(-220px, 160px) scale(1.15); }
+    100% { transform: translate(-120px, 280px) scale(0.9); }
+}
+
+@keyframes drift-c {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(200px, -140px) scale(1.1); }
+    100% { transform: translate(-100px, -240px) scale(1.15); }
+}
+
+/* Cursor follower (lives inside .ambient → back z-index) */
+.cursorDot,
+.cursorGlow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    will-change: transform;
+    transform: translate3d(-200px, -200px, 0) translate(-50%, -50%);
+}
+
+.cursorDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 14px 2px rgba(37, 99, 235, 0.6);
+    opacity: 0.85;
+}
+
+.cursorGlow {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.35), rgba(124, 58, 237, 0.18) 40%, transparent 70%);
+    filter: blur(40px);
+    opacity: 0.9;
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+    .cursorDot,
+    .cursorGlow {
+        display: none;
+    }
+}
+
+/* Section content sits above ambient layer */
+.App > :not(.ambient):not(.progress) {
+    position: relative;
+    z-index: 1;
 }

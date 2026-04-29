@@ -1,40 +1,72 @@
-import React from 'react'
-import styles from './Hero.module.css';
-import resumePDF from "../../../assets/Warut_Resume_Software_Developer.pdf";
-
+import React from "react";
+import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
+
 export const Hero = () => {
   return (
-    <section className={styles.container} id="about">
-      <div className={styles.content}>
-        <h1 className={styles.title}>
-          <span style={{color:"#1f2937"}}>
-            Hi! I'm
+    <section className={styles.section} id="top">
+      <div className={styles.inner}>
+        <div className={styles.content}>
+          <span className={styles.eyebrow}>
+            <span className={styles.dot} aria-hidden="true" />
+            Available for new opportunities
           </span>
-          <span className={styles.gradient}>
-            {" Warut.M"}
-          </span>
-        </h1>
-        <div class={styles.leading}>
-          <p className={styles.description}>
-            I'm a developer with 1 year of hands-on experience in full lifecycle software development, passionate about creating seamless user experiences. 
+
+          <h1 className={styles.title}>
+            Hi, I'm <span className={styles.name}>Warut</span>.
+            <br />
+            I build software people enjoy using.
+          </h1>
+
+          <p className={styles.lede}>
+            Fullstack developer with one year of hands-on experience across the full
+            software lifecycle — from React frontends and FastAPI services to IoT
+            and on-device ML. Focused on shipping interfaces that feel calm,
+            responsive, and considered.
           </p>
-          <span className={styles.lamplight}>
-            
+
+          <div className={styles.actions}>
+            <a href="#contact" className={styles.btnPrimary}>
+              Get in touch
+            </a>
+            <a href="#projects" className={styles.btnSecondary}>
+              View projects
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <dl className={styles.stats}>
+            <div>
+              <dt>Years</dt>
+              <dd>1+</dd>
+            </div>
+            <div>
+              <dt>Projects shipped</dt>
+              <dd>6+</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>React · FastAPI · Flutter</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div className={styles.portraitWrap}>
+          <div className={styles.portraitFrame}>
+            <img
+              src={getImageUrl("hero/boom.jpeg")}
+              alt="Portrait of Warut Meksawang"
+              width="520"
+              height="640"
+              className={styles.portrait}
+            />
+          </div>
+          <span className={styles.portraitTag} aria-hidden="true">
+            <span className={styles.portraitDot} />
+            Bangkok, TH
           </span>
         </div>
-        
-        <a href={resumePDF} download="Warut_Resume_Software_Developer.pdf" className={styles.contactBtn}>
-          Download Resume
-        </a>
       </div>
-      <img
-        src={getImageUrl("hero/boom4.jpeg")}
-        alt="Hero image of me"
-        className={styles.heroImg}
-      />
-      {/* <div className={styles.topBlur} />
-      <div className={styles.bottomBlur} /> */}
     </section>
   );
-}
+};

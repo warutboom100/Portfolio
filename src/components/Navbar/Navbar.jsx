@@ -1,45 +1,79 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./Navbar.module.css";
-import { getImageUrl } from "../../utils";
+
+const NAV_LINKS = [
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#certificates", label: "Certificates" },
+  { href: "#contact", label: "Contact" },
+];
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
   return (
-    <nav className={styles.navbar}>
-      <a className={styles.title} href="/">
-        Portfolio
-      </a>
-      <div className={styles.menu}>
-        <img
+    <header className={styles.header}>
+      <nav className={styles.navbar} aria-label="Primary">
+        <a className={styles.brand} href="#top">
+          <span className={styles.brandMark}>WM</span>
+          <span className={styles.brandText}>Warut.M</span>
+        </a>
+
+        <ul className={styles.menuItems}>
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+
+        <a href="#contact" className={styles.cta}>
+          Let's talk
+        </a>
+
+        <button
+          type="button"
           className={styles.menuBtn}
-          src={
-            menuOpen
-              ? getImageUrl("nav/closeIcon.png")
-              : getImageUrl("nav/menuIcon.png")
-          }
-          alt="menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-        />
-        <ul
-          className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}
-          onClick={() => setMenuOpen(false)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
         >
+          <span className={`${styles.bar} ${menuOpen ? styles.barTop : ""}`} />
+          <span className={`${styles.bar} ${menuOpen ? styles.barMid : ""}`} />
+          <span className={`${styles.bar} ${menuOpen ? styles.barBot : ""}`} />
+        </button>
+      </nav>
+
+      <div
+        id="mobile-navigation"
+        className={`${styles.mobilePanel} ${menuOpen ? styles.mobilePanelOpen : ""}`}
+        onClick={() => setMenuOpen(false)}
+      >
+        <ul>
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
           <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#experience">Experience</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact" className={styles.mobileCta}>
+              Let's talk
+            </a>
           </li>
         </ul>
       </div>
-    </nav>
+    </header>
   );
 };

@@ -1,98 +1,246 @@
 @import "../../vars.css";
 
-.container {
-    padding: 3vh 10%;
-    background-color: var(--color-bg);
-    max-width: 100%;
+.section {
+    padding: var(--space-section) var(--container-px);
+    background-color: transparent;
+}
+
+.inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: var(--space-head);
+    max-width: 640px;
+}
+
+.eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
 }
 
 .title {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    color: var(--color-primary);
+    font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--color-text);
 }
 
-.testimonialGrid {
+.subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.entry {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: flex-start;
 }
 
-.testimonialCard {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.markerCol {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    padding-top: 28px;
 }
 
-.testimonialCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+.marker {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.10);
+    flex-shrink: 0;
+    will-change: box-shadow;
 }
-.testimonialHead{
+
+@media (prefers-reduced-motion: no-preference) {
+    .marker {
+        animation: markerPulse 2.4s ease-in-out infinite;
+    }
+
+    .entry:nth-child(2) .marker { animation-delay: 0.4s; }
+    .entry:nth-child(3) .marker { animation-delay: 0.8s; }
+    .entry:nth-child(4) .marker { animation-delay: 1.2s; }
+}
+
+@keyframes markerPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.10);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0.04);
+    }
+}
+
+.line {
+    flex: 1;
+    width: 2px;
+    margin-top: 8px;
+    background: var(--color-border);
+    min-height: 16px;
+}
+
+.entry:last-child .line {
+    display: none;
+}
+
+.card {
+    margin-bottom: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-md);
+}
+
+.cardHead {
     display: flex;
     justify-content: space-between;
-    
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
 }
-.testimonialHeader {
+
+.who {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    gap: 14px;
 }
 
-.testimonialImage {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border: 3px solid var(--color-primary);
-    padding: 4px;
 }
 
-.testimonialMeta {
-    margin-left: 1rem;
-}
-.testimonialDate{
-    font-size: 1rem;
-    font-weight: 400;
-    margin-top: 10px;
-    color: var(--color-text-dark, #333);
-}
-.testimonialName {
-    font-size: 1.4rem;
+.role {
+    font-size: 1.05rem;
     font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
     margin: 0;
-    color: var(--color-text-dark, #333);
 }
 
-.testimonialPosition {
+.company {
     font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 2px 0 0;
+}
+
+.date {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-soft);
+    padding: 6px 10px;
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
     margin: 0;
-    color: var(--color-text-light, #666);
 }
 
-.testimonialText {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--color-text-dark, #333);
-   
+.bullets li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-text);
 }
-.testimonialLine {
-    margin: 0.5rem 0;
+
+.bullets li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
 }
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    .testimonialGrid {
-        grid-template-columns: 1fr;
+
+@media screen and (max-width: 640px) {
+    .entry {
+        grid-template-columns: 32px minmax(0, 1fr);
+        gap: 1rem;
     }
 
-    .container {
-        padding: 60px 5%;
+    .markerCol {
+        padding-top: 24px;
     }
 
-    .title {
-        font-size: 2rem;
+    .marker {
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    .cardHead {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date {
+        order: -1;
+        align-self: flex-start;
     }
 }

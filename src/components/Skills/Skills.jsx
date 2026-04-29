@@ -1,53 +1,70 @@
 import React from "react";
 
 import styles from "./Skills.module.css";
-import skills from "../../data/frontskills.json";
-import skills1 from "../../data/backskills.json";
-import skills2 from "../../data/otherskills.json";
+import frontSkills from "../../data/frontskills.json";
+import backSkills from "../../data/backskills.json";
+import otherSkills from "../../data/otherskills.json";
 import { getImageUrl } from "../../utils";
+
+const CATEGORIES = [
+  {
+    id: "frontend",
+    label: "Frontend",
+    description: "Building responsive, accessible interfaces.",
+    items: frontSkills,
+  },
+  {
+    id: "backend",
+    label: "Backend",
+    description: "APIs, data, auth and the glue in between.",
+    items: backSkills,
+  },
+  {
+    id: "tools",
+    label: "Tools & Cloud",
+    description: "Cloud, containers, hardware and ML tooling.",
+    items: otherSkills,
+  },
+];
 
 export const Skills = () => {
   return (
-    <section className={styles.container} id="about">
-      <div className={styles.content}>
-        <div className={styles.skillsContainer}>
-          <div className={`${styles.skillsRow} ${styles.scrollLeftAnimation}`}>
-            {/* Double the skills to create a seamless loop */}
-            {[...skills, ...skills].map((skill, id) => (
-              <div key={`front-${id}`} className={styles.skill}>
-                <div className={styles.skillImageContainer}>
-                  <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                </div>
-                <p>{skill.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        <div className={styles.skillsContainer}>
-          <div className={`${styles.skillsRow} ${styles.scrollRightAnimation}`}>
-            {[...skills1, ...skills1].map((skill, id) => (
-              <div key={`back-${id}`} className={styles.skill}>
-                <div className={styles.skillImageContainer}>
-                  <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                </div>
-                <p>{skill.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+    <section className={styles.section} id="skills">
+      <div className={styles.inner}>
+        <header className={styles.head}>
+          <span className={styles.eyebrow}>Toolbox</span>
+          <h2 className={styles.title}>Things I build with</h2>
+          <p className={styles.subtitle}>
+            A pragmatic mix of frameworks, runtimes and platforms I reach for
+            on most days.
+          </p>
+        </header>
 
-        <div className={styles.skillsContainer}>
-          <div className={`${styles.skillsRow} ${styles.scrollLeftAnimation}`}>
-            {[...skills2, ...skills2].map((skill, id) => (
-              <div key={`back-${id}`} className={styles.skill}>
-                <div className={styles.skillImageContainer}>
-                  <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                </div>
-                <p>{skill.title}</p>
+        <div className={styles.grid}>
+          {CATEGORIES.map((cat) => (
+            <article key={cat.id} className={styles.card}>
+              <div className={styles.cardHead}>
+                <h3 className={styles.cardTitle}>{cat.label}</h3>
+                <p className={styles.cardDesc}>{cat.description}</p>
               </div>
-            ))}
-          </div>
+
+              <ul className={styles.skillList}>
+                {cat.items.map((skill) => (
+                  <li key={skill.title} className={styles.skill}>
+                    <span className={styles.skillIcon}>
+                      <img
+                        src={getImageUrl(skill.imageSrc)}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                      />
+                    </span>
+                    <span>{skill.title}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </div>
     </section>
