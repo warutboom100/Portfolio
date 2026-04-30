@@ -28,11 +28,13 @@ export const About = () => {
                 <div className={styles.cardHead}>
                   <div className={styles.who}>
                     <span className={styles.logo}>
-                      <img
-                        src={getImageUrl(entry.image)}
-                        alt=""
-                        aria-hidden="true"
-                      />
+                      {entry.image && (
+                        <img
+                          src={getImageUrl(entry.image)}
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      )}
                     </span>
                     <div>
                       <h3 className={styles.role}>{entry.position}</h3>

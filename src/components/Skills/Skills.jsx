@@ -4,6 +4,7 @@ import styles from "./Skills.module.css";
 import frontSkills from "../../data/frontskills.json";
 import backSkills from "../../data/backskills.json";
 import otherSkills from "../../data/otherskills.json";
+import tools from "../../data/tools.json";
 import { getImageUrl } from "../../utils";
 
 const CATEGORIES = [
@@ -22,6 +23,12 @@ const CATEGORIES = [
   {
     id: "tools",
     label: "Tools & Cloud",
+    description: "Cloud, containers, hardware and ML tooling.",
+    items: tools,
+  },
+  {
+    id: "others",
+    label: "Others",
     description: "Cloud, containers, hardware and ML tooling.",
     items: otherSkills,
   },
@@ -52,12 +59,14 @@ export const Skills = () => {
                 {cat.items.map((skill) => (
                   <li key={skill.title} className={styles.skill}>
                     <span className={styles.skillIcon}>
-                      <img
-                        src={getImageUrl(skill.imageSrc)}
-                        alt=""
-                        aria-hidden="true"
-                        loading="lazy"
-                      />
+                      {skill.imageSrc && (
+                        <img
+                          src={getImageUrl(skill.imageSrc)}
+                          alt=""
+                          aria-hidden="true"
+                          loading="lazy"
+                        />
+                      )}
                     </span>
                     <span>{skill.title}</span>
                   </li>

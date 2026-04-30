@@ -27,6 +27,7 @@ const CONTACT = [
   {
     id: "linkedin",
     label: "LinkedIn",
+    // value: "in/waut-mek",
     value: "in/warut-meksawang",
     href: "https://www.linkedin.com/in/warut-meksawang-1aa661230/",
     icon: "contact/linkedinIcon.png",
@@ -47,7 +48,7 @@ export const Contact = () => {
             <span className={styles.accent}>worth shipping.</span>
           </h2>
           <p className={styles.subtitle}>
-            Open to fullstack and frontend roles. The fastest way to reach me is
+            Open to fullstack and software engineer roles. The fastest way to reach me is
             email — I usually reply within a day.
           </p>
           <a href="mailto:warutboom300@gmail.com" className={styles.cta}>

@@ -4,8 +4,8 @@
     "imageSrc": "skills/python.png"
   },
   {
-    "title": "FastAPI",
-    "imageSrc": "skills/fastapi.svg"
+    "title": "Node.js",
+    "imageSrc": "skills/nodejs.png"
   },
   {
     "title": "MongoDB",
@@ -16,12 +16,31 @@
     "imageSrc": "skills/firebase.png"
   },
   {
-    "title": "Node.js",
-    "imageSrc": "skills/nodejs.png"
+    "title": "MySQL",
+    "imageSrc": "skills/mysql.png"
   },
   {
-    "title": "Mysql",
-    "imageSrc": "skills/mysql.png"
+    "title": "SQL Server",
+    "imageSrc": "skills/sqlserver.png"
+  },
+  {
+    "title": "Redis",
+    "imageSrc": "skills/redis.png"
+  },
+  {
+    "title": "PostgreSQL",
+    "imageSrc": "skills/postgresql.jpg"
+  },
+  {
+    "title": "MQTT",
+    "imageSrc": "skills/MQTT.png"
+  },
+  {
+    "title": "RabbitMQ",
+    "imageSrc": "skills/RabbitMQ.png"
+  },
+  {
+    "title": "Golang (learning)",
+    "imageSrc": "skills/Golang.png"
   }
-  
 ]

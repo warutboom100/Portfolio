@@ -19,10 +19,10 @@ export const Hero = () => {
           </h1>
 
           <p className={styles.lede}>
-            Fullstack developer with one year of hands-on experience across the full
-            software lifecycle — from React frontends and FastAPI services to IoT
-            and on-device ML. Focused on shipping interfaces that feel calm,
-            responsive, and considered.
+            Full Stack Developer with a robotics background. Over the past few years
+            I've worked on insurance portals, IoT interfaces for factories, and
+            AI-driven applications — and what I enjoy most is figuring out what the
+            data is actually trying to say.
           </p>
 
           <div className={styles.actions}>
@@ -38,15 +38,15 @@ export const Hero = () => {
           <dl className={styles.stats}>
             <div>
               <dt>Years</dt>
-              <dd>1+</dd>
+              <dd>3+</dd>
             </div>
             <div>
               <dt>Projects shipped</dt>
               <dd>6+</dd>
             </div>
             <div>
-              <dt>Stack</dt>
-              <dd>React · FastAPI · Flutter</dd>
+              <dt>skill</dt>
+              <dd>Web Development, AI-driven applications, IoT interfaces</dd>
             </div>
           </dl>
         </div>

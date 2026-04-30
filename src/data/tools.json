@@ -1,0 +1,38 @@
+[
+  {
+    "title": "AWS",
+    "imageSrc": "skills/aws.png"
+  },
+  {
+    "title": "GCP",
+    "imageSrc": "skills/google.png"
+  },
+  {
+    "title": "Docker",
+    "imageSrc": "skills/docker.png"
+  },
+  {
+    "title": "Fork",
+    "imageSrc": "skills/fork.png"
+  },
+  {
+    "title": "GitLab CI/CD",
+    "imageSrc": "skills/GitLab.jpg"
+  },
+  {
+    "title": "Apidog",
+    "imageSrc": "skills/Apidog.jpg"
+  },
+  {
+    "title": "ClaudeCLI",
+    "imageSrc": "skills/GitLab.jpg"
+  },
+  {
+    "title": "Postman",
+    "imageSrc": "skills/Postman.png"
+  },
+  {
+    "title": "Vitest",
+    "imageSrc": "skills/Vitest.svg"
+  }
+]

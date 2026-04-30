@@ -1,35 +1,41 @@
 [
   {
-    "id":1,
-    "position": "Software Developer",
+    "id": 1,
+    "position": "Full Stack Developer",
+    "name": "Fin Insurance Broker Co., Ltd.",
+    "Date": "Apr 2025 - Apr 2026",
+    "text": [
+      "Took over and extended an HR platform used by 200+ people — added modules for KPI tracking, attendance, leave and OT requests, and hiring workflows, cutting down the manual back-and-forth the HR team was dealing with daily.",
+      "Moved the expense and advance payment process off paper by building a digital approval flow tied into Lark, which sped up how fast accounting could close out requests.",
+      "Designed an email classifier that mixes an ML model with rule-based logic to sort incoming issues automatically — hit 80%+ accuracy in production and made it possible to run recurring analysis on agent workload patterns.",
+      "Built out an insurance renewal system end-to-end: automated email and SMS nudges to policyholders, a call log for agents to track follow-ups, and a dashboard showing premium collection and call KPIs.",
+      "Created a back-office tool for the logistics team covering product setup, packaging configuration, order management, live stock tracking, and delivery status — one place to manage the whole fulfillment flow."
+    ],
+    "image": "history/finlogo.png"
+  },
+  {
+    "id": 2,
+    "position": "Freelance Developer",
     "name": "Freelance",
-    "Date": "Jan 2024 - Present",
-    "text": ["- Designed the Smart Factory web-based learning platform","- Built a hospital porter location tracking system available on both mobile and web application","- Designed a responsive front-end interface for an AI-powered application integrate with Chainlit chatbot","- Created ui dashboard for data visualization of energy in factory"],
+    "Date": "Jan 2024 - Feb 2025",
+    "text": [
+      "Designed and shipped \"Smart Factory,\" a web learning platform for factory workers — focused on making training content easy to navigate without any technical background.",
+      "Built a porter tracking app for a hospital that shows real-time staff positions on both mobile and web, helping coordinators dispatch faster and reduce idle time.",
+      "Wired a PLC-controlled sterilization system to a live web dashboard so operators could monitor temperature and pressure remotely without checking the machine in person.",
+      "Put together the frontend for an AI search tool: users ask questions in plain language, the app queries a Pinecone vector store through a Chainlit backend, and answers come back conversationally.",
+      "Pulled sensor data off factory robots via MQTT, stored and visualized it on a dashboard — early groundwork so the team could spot failure patterns before breakdowns happen."
+    ],
     "image": "history/freelance.png"
   },
   {
-    "id":2,
-    "position": "Control Engineer",
-    "name": "Freelance",
-    "Date": "Jun - Dec 2024",
-    "text": ["- Created a food sterilization system using PLC technology with temperature and pressure controls","- Built a IoT system to collect machine and robot sensor data for predictive maintenance to prevent breakdowns."],
-    "image": "history/control.png"
-  },
-  {
-    "id":3,
+    "id": 3,
     "position": "Robotic/PLC Engineer",
-    "name": "Techman Electronics",
+    "name": "Techman Electronics (Thailand) Co., Ltd.",
     "Date": "Aug - Dec 2023",
-    "text": ["- Designed and implement software solutions for robots, PLC and wiring systems for automation,","- Applied IoT technologies to reduce machine downtime, leveraging data-driven insights to enhance operational efficiency"],
+    "text": [
+      "Wrote control software for industrial robots and PLC systems at a manufacturing facility — handled both the logic programming and integration with the production line.",
+      "Layered IoT sensors onto existing machinery so the team could see real-time performance data; identifying failure patterns early helped bring downtime noticeably down."
+    ],
     "image": "history/techman.jpg"
-  },
-  {
-    "id":4,
-    "position": "Software Engineer Intern",
-    "name": "Hospital Automation Research Center @FIBO",
-    "Date": "Jun - Nov 2022",
-    "text": ["- Research on IoT-based indoor localization systems with mobile applications","- Developed software for mobile robots, Improve their functionality performance the integration of advanced algorithms and user interface improvements"],
-    
-    "image": "history/hac.png"
   }
 ]
