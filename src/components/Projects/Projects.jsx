@@ -10,7 +10,7 @@ export const Projects = () => {
       <div className={styles.inner}>
         <header className={styles.head}>
           <span className={styles.eyebrow}>Selected Work</span>
-          <h2 className={styles.title}>Projects I've shipped</h2>
+          <h2 className={styles.title}>Personal Projects</h2>
           <p className={styles.subtitle}>
             A handful of side projects and product work — each one taught me
             something new.

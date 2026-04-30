@@ -23,13 +23,13 @@ const CATEGORIES = [
   {
     id: "tools",
     label: "Tools & Cloud",
-    description: "Cloud, containers, hardware and ML tooling.",
+    description: "Cloud platforms, containers and everyday dev tools.",
     items: tools,
   },
   {
     id: "others",
     label: "Others",
-    description: "Cloud, containers, hardware and ML tooling.",
+    description: "IoT, embedded systems, robotics and AI frameworks.",
     items: otherSkills,
   },
 ];
