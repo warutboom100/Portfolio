@@ -12,20 +12,12 @@
     "imageSrc": "skills/docker.png"
   },
   {
-    "title": "Fork",
-    "imageSrc": "skills/fork.png"
-  },
-  {
     "title": "GitLab CI/CD",
     "imageSrc": "skills/GitLab.jpg"
   },
   {
-    "title": "Apidog",
-    "imageSrc": "skills/Apidog.jpg"
-  },
-  {
-    "title": "ClaudeCLI",
-    "imageSrc": "skills/ClaudeCLI.png"
+    "title": "Fork",
+    "imageSrc": "skills/GitLab.jpg"
   },
   {
     "title": "Postman",
@@ -34,5 +26,13 @@
   {
     "title": "Vitest",
     "imageSrc": "skills/Vitest.svg"
+  },
+  {
+    "title": "ClaudeCLI",
+    "imageSrc": "skills/ClaudeCLI.png"
+  },
+  {
+    "title": "Apidog",
+    "imageSrc": "skills/Apidog.jpg"
   }
 ]

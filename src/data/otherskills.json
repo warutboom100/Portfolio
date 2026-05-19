@@ -1,17 +1,5 @@
 [
   {
-    "title": "Arduino",
-    "imageSrc": "skills/arduino.svg"
-  },
-  {
-    "title": "STM32",
-    "imageSrc": "skills/stm32.jpg"
-  },
-  {
-    "title": "PLC",
-    "imageSrc": "skills/plc.png"
-  },
-  {
     "title": "Langchain",
     "imageSrc": "skills/langchain.png"
   },
@@ -20,15 +8,23 @@
     "imageSrc": "skills/langgraph.png"
   },
   {
-    "title": "ROS",
-    "imageSrc": "skills/ros.png"
+    "title": "Langsmith",
+    "imageSrc": "skills/Langsmith.png"
   },
   {
     "title": "Pinecone",
     "imageSrc": "skills/pinecone.png"
   },
   {
-    "title": "Robotics",
-    "imageSrc": "skills/robotic.png"
+    "title": "Ollama",
+    "imageSrc": "skills/ollama.png"
+  },
+  {
+    "title": "RAG",
+    "imageSrc": "skills/rag.png"
+  },
+  {
+    "title": "LiteLLM",
+    "imageSrc": "skills/litellm.png"
   }
 ]

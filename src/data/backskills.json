@@ -8,28 +8,24 @@
     "imageSrc": "skills/nodejs.png"
   },
   {
-    "title": "MongoDB",
-    "imageSrc": "skills/mongodb.png"
+    "title": "Go",
+    "imageSrc": "skills/Golang.png"
   },
   {
-    "title": "Firebase",
-    "imageSrc": "skills/firebase.png"
+    "title": "MongoDB",
+    "imageSrc": "skills/mongodb.png"
   },
   {
     "title": "MySQL",
     "imageSrc": "skills/mysql.png"
   },
   {
-    "title": "SQL Server",
-    "imageSrc": "skills/sqlserver.png"
+    "title": "PostgreSQL",
+    "imageSrc": "skills/postgresql.jpg"
   },
   {
     "title": "Redis",
     "imageSrc": "skills/redis.png"
-  },
-  {
-    "title": "PostgreSQL",
-    "imageSrc": "skills/postgresql.jpg"
   },
   {
     "title": "MQTT",
@@ -38,9 +34,5 @@
   {
     "title": "RabbitMQ",
     "imageSrc": "skills/RabbitMQ.png"
-  },
-  {
-    "title": "Golang (learning)",
-    "imageSrc": "skills/Golang.png"
   }
 ]
