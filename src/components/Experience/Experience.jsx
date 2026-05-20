@@ -3,48 +3,70 @@ import { useReveal } from "../../hooks";
 
 const entries = [
   {
-    id: "fin",
-    company: "Fin Insurance Broker Co., Ltd.",
-    role: "Full-Stack Developer",
-    period: "2023 — Present",
+  id: "fin",
+  company: "Fin Insurance Broker Co., Ltd.",
+  role: "Full-Stack Developer",
+  period: "Apr 2025 - Apr 2026",
+  type: "Full-time",
+  summary: "Sole developer responsible for designing and shipping internal systems across HR, operations, and AI tooling for a national insurance brokerage.",
+  bullets: [
+  "Built an HRIS/ERP covering personal data, KPI evaluations, attendance, leave/OT, and recruitment for 200+ employees — replacing manual paperwork end-to-end",
+  "Developed an insurance renewal platform with automated email/SMS reminders, agent call tracking, and KPI dashboards for premium collection",
+  "Built an email classifier combining ML and rule-based logic to flag problematic insurance cases 80%+ accuracy, enabling agents to prioritise issues before manual review",
+  "Digitised expense reimbursement and advance payments with Lark-based approval workflows, eliminating paper processes for the accounting team",
+  "Built a back-office system for the logistics team covering product setup, order management, packing configuration, and real-time inventory and delivery tracking",
+  "Developed an asset management module for tracking and managing organisational assets across departments — recording assignment, status, and movement history",
+  "Shipped an e-learning platform for internal staff training and licensing exam preparation for Non-Life and Life insurance certifications",
+],
+
+  stack: ["Next.js", "Node.js", "Express", "PostgreSQL", "Lark API", "Python"],
+},
+
+  {
+  id: "freelance",
+  company: "Freelance Developer",
+  role: "Independent Contractor",
+  period: "Jan 2024 - Feb 2025",
+  type: "Freelance",
+  summary: "Delivered IoT dashboards, AI-powered apps, and full-stack systems for healthcare, manufacturing, and enterprise clients.",
+  bullets: [
+    "Built a hospital porter tracking system (mobile + web) with real-time indoor positioning — improving staff dispatch and operational workflow for hospital coordinators",
+    "Designed and shipped 'Smart Factory' — a web-based learning platform with intuitive UI and structured training resources for factory worker onboarding",
+    "Developed a food sterilization monitoring system integrating PLC-based temperature and pressure controls with a live online dashboard for remote oversight",
+    "Built an IoT dashboard to collect and visualize robot and machine sensor data during production — laying groundwork for predictive maintenance analysis",
+    "Designed the frontend for an AI conversational app using Chainlit as the interface layer, enabling real-time information retrieval through natural-language queries",
+  ],
+  stack: ["React", "Flutter", "FastAPI", "Python", "MQTT", "Chainlit"],
+},
+{
+    id: "techman",
+    company: "Techman Electronics (Thailand) Co., Ltd.",
+    role: "Robotic/PLC Engineer",
+    period: "Aug - Dec 2023",
     type: "Full-time",
-    summary: "Leading development of insurance renewal systems, HR platforms, and internal tooling for a national brokerage.",
+    summary: "First industry role — programmed industrial robots and PLC systems on an active manufacturing line.",
     bullets: [
-      "Architected and shipped InsureFlow — a renewal & policy management platform handling thousands of policies",
-      "Built EduAdmin: e-learning and HR admin system with role-based access for 200+ internal users",
-      "Owned end-to-end delivery: database design, API, frontend, deployment, and on-call support",
-      "Migrated legacy SQL Server workloads to MariaDB; cut average query latency by ~40%",
+      "Designed software solutions for industrial robots and PLC control systems, streamlining automation in manufacturing environments.",
+      "Implemented IoT technologies to reduce machine downtime and optimize operational efficiency through data analytics.",
     ],
-    stack: ["Next.js", "Node.js", "Express", "MySQL/MariaDB", "Ant Design"],
+    stack: ["PLC", "C++", "IoT", "Electrical Wiring", "Automation"],
   },
+
   {
-    id: "freelance",
-    company: "Freelance Developer",
-    role: "Independent Contractor",
-    period: "2022 — 2023",
-    type: "Freelance",
-    summary: "Shipped IoT dashboards, smart-factory platforms, and AI-powered apps for SMB and enterprise clients.",
-    bullets: [
-      "SmartFactory Dashboard — real-time monitoring of manufacturing lines via WebSocket telemetry",
-      "Built ML + rule-based email classification system with Thai-language support",
-      "Designed and integrated Redis-based job queues for high-throughput email ingestion",
-    ],
-    stack: ["React", "Python", "Node.js", "WebSocket", "Redis"],
-  },
-  {
-    id: "kmutt",
-    company: "KMUTT",
-    role: "B.Eng. Robotics & Automation Engineering",
-    period: "2019 — 2023",
-    type: "Education",
-    summary: "Graduated June 2023 from King Mongkut's University of Technology Thonburi.",
-    bullets: [
-      "Senior project: autonomous warehouse robot navigation using ROS and computer vision",
-      "Specialized in control systems, embedded programming, and PLC automation",
-      "Active in robotics club; built competitive line-following and sumo bots",
-    ],
-    stack: ["ROS", "Python", "C++", "MATLAB"],
-  },
+  id: "kmutt",
+  company: "KMUTT",
+  role: "B.Eng. Robotics & Automation Engineering",
+  period: "2019 — 2023",
+  type: "Education",
+  summary: "Graduated June 2023 from King Mongkut's University of Technology Thonburi (KMUTT).",
+  bullets: [
+    "Intern — Hospital Automation Research Center, FIBO (Jun–Nov 2022): contributed to mobile robot software development and researched IoT-based indoor localization systems for accurate real-time positioning",
+    "Senior project: Indoor localization with mobile application",
+    "Specialised in control systems, embedded programming, and PLC automation",
+  ],
+  stack: ["ROS", "Python", "C++", "MATLAB", "IoT"],
+}
+
 ];
 
 export function Experience() {

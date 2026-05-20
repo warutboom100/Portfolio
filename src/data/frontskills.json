@@ -24,6 +24,14 @@
     "imageSrc": "skills/tailwind.png"
   },
   {
+    "title": "Zustand",
+    "imageSrc": "skills/flutter.png"
+  },
+  {
+    "title": "TanStack Query",
+    "imageSrc": "skills/flutter.png"
+  },
+  {
     "title": "Flutter",
     "imageSrc": "skills/flutter.png"
   }

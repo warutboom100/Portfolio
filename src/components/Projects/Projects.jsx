@@ -572,7 +572,7 @@ export function Projects() {
             </h2>
           </div>
           <p style={{ maxWidth: 360, color: "var(--muted)", margin: 0, fontSize: "0.95rem", lineHeight: 1.6 }}>
-            A small slice of recent work — production platforms, freelance builds, and
+            A small slice of recent work production platforms, freelance builds, and
             personal experiments. Click any card to dive in.
           </p>
         </div>
@@ -633,38 +633,6 @@ export function Projects() {
           {visible.map((p, i) => (
             <ProjectCard key={p.id} p={p} index={i} onOpen={() => setOpenId(p.id)} />
           ))}
-          <div
-            className="reveal is-visible projects-coming"
-            style={{
-              borderRadius: 20,
-              border: "1.5px dashed rgba(255,255,255,0.12)",
-              background: "transparent",
-              minHeight: 360,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "0.6rem",
-              padding: "1.5rem",
-              color: "var(--muted)",
-              textAlign: "center",
-              fontFamily: "var(--font-display)",
-            }}
-          >
-            <div style={{
-              width: 44, height: 44, borderRadius: 12,
-              display: "grid", placeItems: "center",
-              border: "1px solid var(--border)",
-              background: "rgba(255,255,255,0.02)",
-              fontFamily: "var(--font-mono)",
-              fontSize: "1.5rem",
-              color: "var(--subtext)",
-            }}>+</div>
-            <div style={{ fontSize: "0.95rem", color: "var(--subtext)", fontWeight: 500 }}>More on the way</div>
-            <div style={{ fontSize: "0.8rem", maxWidth: 220, lineHeight: 1.5 }}>
-              Currently building — check back soon for new entries.
-            </div>
-          </div>
         </div>
       </div>
 

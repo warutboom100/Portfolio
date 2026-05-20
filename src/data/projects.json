@@ -2,21 +2,22 @@
 
   {
   "id": "agentstudio",
-  "name": "Agent Studio",
+  "name": "Agent Studio (DRAFT)",
   "tag": "Personal",
-  "status": "WIP",
+  "status": "In-progress",
   "year": "2026",
+  "images": ["projects/ai-agent/ai1.PNG","projects/ai-agent/ai2.PNG","projects/ai-agent/ai3.PNG","projects/ai-agent/ai4.PNG","projects/ai-agent/ai5.PNG","projects/ai-agent/ai6.PNG","projects/ai-agent/ai7.PNG","projects/ai-agent/ai8.png"],
   "featured": true,
-  "desc": "No-code platform for building and managing AI chatbots configure prompts, RAG, and tools without touching code.",
+  "desc": "No-code platform for building and managing AI chatbots — configure prompts, RAG, and tools without touching code.",
   "purpose": "Let teams deploy and iterate on AI agents without writing code every time they change a prompt, swap a model, or add a tool.",
-  "outcome": "Multi-agent platform supporting restaurant chatbots, customer support, and internal tools config changes apply instantly without redeployment.",
+  "outcome": "Multi-agent platform supporting restaurant chatbots, customer support, and internal tools — config changes apply instantly without redeployment.",
   "longDesc": "Agent Studio is a no-code platform for creating and managing multiple AI agents from a single interface. Each agent is configured independently LLM provider, system prompt, knowledge base, and custom tools — through a guided setup wizard. Changes take effect instantly without redeployment, so non-technical teams can manage agents on their own. Includes RAG support with document upload and retrieval testing, a custom tool builder for function calling, live chat preview with debug mode, and a per-agent analytics dashboard tracking usage and cost.",
   "highlights": [
-    "Multi-agent management each agent has its own LLM config, system prompt, RAG knowledge base, and tool bindings",
-    "No redeploy needed stateless architecture loads config from DB per request, so prompt and tool changes apply instantly",
+    "Multi-agent management: each agent has its own LLM config, system prompt, RAG knowledge base, and tool bindings",
+    "No redeploy needed: stateless architecture loads config from DB per request, so prompt and tool changes apply instantly",
     "Built-in RAG, custom tool builder, live chat preview with debug output, and daily analytics per agent"
   ],
-  "stack": ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Anthropic API", "Zustand"],
+  "stack": ["Next.js", "GO (Fiber)", "FastAPI", "AI/LLM", "LangChain", "LangGraph","PostgreSQL","ChromaDB"],
   "hue": ["#6366f1", "#a855f7"],
   "links": {}
 },
@@ -29,11 +30,11 @@
     "featured": true,
     "images": ["projects/hrm/dashboard.png","projects/hrm/hrm1.png","projects/hrm/hrm2.png","projects/hrm/hrm3.png","projects/hrm/hrm4.png","projects/hrm/hrm5.png"],
     "desc": "Internal HR platform for 200+ employees covering the full employee lifecycle records, department management, KPI tracking, attendance, leave/OT, recruitment, and offboarding.",
-    "purpose": "Consolidate paper forms and Personal data chains into a single HR system, integrated with Lark for real-time approvals and notifications.",
+    "purpose": "Consolidate paper forms and personal data silos into a single HR system, integrated with Lark for real-time approvals and notifications.",
     "outcome": "200+ employees onboarded; manual paperwork eliminated across KPI cycles, leave requests, and hiring workflows.",
-    "longDesc": "An internal HR platform built solo from requirements gathering through production deployment. The system covers the full employee lifecycle personal records, KPI evaluation cycles, attendance tracking, leave and OT requests, and recruitment pipelines, Integrated with the Lark API so managers receive real-time approval notifications inside the tools they already use daily.",
+    "longDesc": "An internal HR platform built solo from requirements gathering through production deployment. The system covers the full employee lifecycle personal records, KPI evaluation cycles, attendance tracking, leave and OT requests, and recruitment pipelines — integrated with the Lark API so managers receive real-time approval notifications inside the tools they already use daily.",
     "highlights": [
-      "Built end to end solo from early HR stakeholder interviews through architecture, development, and production deploy",
+      "Built end-to-end solo from early HR stakeholder interviews through architecture, development, and production deploy",
       "Lark API integration for approval flows and real-time notifications without changing how teams communicate",
       "Covers the full employee lifecycle: personal data, KPI evaluations, attendance, leave/OT, and hiring pipelines"
     ],
@@ -62,6 +63,27 @@
     "hue": ["#34d399", "#10b981"],
     "links": {}
   },{
+  "id": "insureflow",
+  "name": "Insurance Renewal Platform",
+  "images": ["projects/renewal/renewal1.PNG","projects/renewal/renewal2.PNG","projects/renewal/renewal3.PNG","projects/renewal/renewal4.PNG","projects/renewal/renewal5.PNG","projects/renewal/renewal6.PNG","projects/renewal/renewal7.PNG"],
+  "tag": "Full-time",
+  "status": "Production",
+  "year": "2025",
+  "featured": true,
+  "desc": "Internal ERP for insurance renewal automated email/SMS reminders, agent call tracking, and KPI dashboards for premium collection.",
+  "purpose": "Replace manual renewal follow-ups with an end-to-end workflow covering policy alerts, batch communications, and agent performance tracking.",
+  "outcome": "Full renewal cycle digitised from policy expiry alerts to batch email/SMS dispatch and call logging with live KPI dashboards for managers.",
+  "longDesc": "An internal insurance renewal platform built for agents and managers to manage the full policy renewal lifecycle. Agents work through a guided multi-step workflow to upload renewal data, preview and send batch email and SMS reminders with urgency-based prioritisation, and log call outcomes per customer lead. Managers get a KPI dashboard with renewal stats, staff performance tables, and color-coded expiry tracking. Includes lead management with task transfer between agents, blacklist/blocklist controls, and Excel export across all reports.",
+  "highlights": [
+    "Multi-step renewal workflow Excel upload → document preview → batch email → batch SMS with urgency levels",
+    "Lead management for agents: per-lead call logging with status, notes, and next-call scheduling; bulk task transfer for managers",
+    "KPI dashboard with renewal stats, monthly bar charts, staff performance tables, and color-coded expiry urgency rows"
+  ],
+  "stack": ["Next.js", "React", "Ant Design", "Node.js", "MySQL","Redis"],
+  "hue": ["#F16363", "#a855f7"],
+  "links": {}
+},
+  {
   "id": "robotdashboard",
   "name": "Robot Energy Dashboard",
   "tag": "Freelance",
@@ -123,7 +145,7 @@
     "Semantic retrieval via Pinecone vector store plain-language queries, no keyword matching required",
     "Streaming response UI so answers appear progressively, reducing perceived wait time"
   ],
-  "stack": ["React","Python","Langchain","Langgraph" ,"Chainlit", "RAG"],
+  "stack": ["React","Python","LangChain","LangGraph" ,"ChainLit", "RAG"],
   "hue": ["#a855f7", "#6366f1"],
   "links": {
     "github": "https://github.com/warutboom100/Chainlit-Clone"

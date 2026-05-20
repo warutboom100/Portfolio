@@ -230,7 +230,7 @@ export function Hero() {
           </a>
           <a
             className="liquid-glass"
-            href="/assets/cv/warut_meksawang_fullstack.pdf"
+            href="/assets/cv/Fullstack_warut_meksawang.pdf"
             download
             style={{
               padding: "0.85rem 1.75rem",

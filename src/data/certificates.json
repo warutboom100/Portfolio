@@ -1,0 +1,18 @@
+[
+  {
+    "id": "isbm-2023",
+    "name": "ISBM 2023",
+    "issuer": "2nd World Conference on Information Systems for Business Management",
+    "year": "2023",
+    "image": "projects/ISBM2023.jpeg",
+    "hue": "#6366f1"
+  },
+  {
+    "id": "udemy",
+    "name": "Udemy Course",
+    "issuer": "AI A-Z [2025]: Agentic AI, Gen AI, Prompt Engineering and RL",
+    "year": "2025",
+    "image": "projects/udemy.jpg",
+    "hue": "#a855f7"
+  }
+]
