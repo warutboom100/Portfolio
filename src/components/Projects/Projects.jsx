@@ -390,116 +390,125 @@ function ProjectModal({ project, onClose }) {
             position: "fixed",
             inset: 0,
             zIndex: 120,
-            background: "rgba(2, 0, 8, 0.78)",
+            background: "rgba(0, 0, 0, 0.94)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            padding: "1.25rem",
+            padding: "1rem",
             animation: "modal-backdrop-in 0.2s ease both",
           }}
         >
-          <div
-            className="liquid-glass"
-            onClick={(e) => e.stopPropagation()}
+          <img
+            src={`/assets/${images[lightboxIdx]}`}
+            alt={`${p.name} screenshot ${lightboxIdx + 1}`}
+            onError={() => setLightboxIdx(null)}
+            draggable={false}
             style={{
-              width: "min(92vw, 640px)",
-              maxHeight: "calc(100vh - 6rem)",
-              borderRadius: 16,
-              background: "linear-gradient(180deg, rgba(20,8,40,0.92), rgba(8,2,22,0.96))",
-              padding: "0.75rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.6rem",
-              animation: "modal-panel-in 0.35s cubic-bezier(0.16,1,0.3,1) both",
-              boxShadow: `0 24px 64px ${p.hue[0]}33, 0 0 0 1px rgba(255,255,255,0.04)`,
+              maxWidth: "100%",
+              maxHeight: "100%",
+              objectFit: "contain",
+              display: "block",
+              animation: "modal-panel-in 0.3s cubic-bezier(0.16,1,0.3,1) both",
+              userSelect: "none",
+              WebkitUserSelect: "none",
+              WebkitTouchCallout: "none",
+              pointerEvents: "none",
             }}
+          />
+
+          <button
+            type="button"
+            onClick={() => setLightboxIdx(null)}
+            aria-label="Close preview"
+            style={{
+              position: "absolute",
+              top: 18, right: 18,
+              width: 40, height: 40,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.14)",
+              color: "#fff",
+              cursor: "pointer",
+              display: "grid",
+              placeItems: "center",
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.18)"; e.currentTarget.style.transform = "rotate(90deg)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.transform = "rotate(0)"; }}
           >
-            <div
-              style={{
-                position: "relative",
-                aspectRatio: "16 / 10",
-                borderRadius: 12,
-                overflow: "hidden",
-                background: "rgba(8,2,22,0.6)",
-                border: "1px solid var(--border)",
-              }}
-            >
-              <img
-                src={`/assets/${images[lightboxIdx]}`}
-                alt={`${p.name} screenshot ${lightboxIdx + 1}`}
-                onError={() => setLightboxIdx(null)}
-                draggable={false}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M6 18L18 6" /></svg>
+          </button>
+
+          {images.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={() => setLightboxIdx((i) => (i - 1 + images.length) % images.length)}
+                aria-label="Previous screenshot"
                 style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  display: "block",
-                  userSelect: "none",
-                  WebkitUserSelect: "none",
-                  WebkitTouchCallout: "none",
+                  position: "absolute",
+                  left: 18,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  width: 44, height: 44,
+                  borderRadius: 999,
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.14)",
+                  color: "#fff",
+                  cursor: "pointer",
+                  display: "grid",
+                  placeItems: "center",
                 }}
-              />
-            </div>
-
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                padding: "0.25rem 0.4rem 0.1rem",
-                gap: "0.5rem",
-              }}
-            >
-              {images.length > 1 ? (
-                <button
-                  type="button"
-                  onClick={() => setLightboxIdx((i) => (i - 1 + images.length) % images.length)}
-                  aria-label="Previous screenshot"
-                  style={iconBtnStyle}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.10)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.04)")}
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M15 18l-6-6 6-6" /></svg>
-                </button>
-              ) : <span style={{ width: 32 }} />}
-
-              <span
+                onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => setLightboxIdx((i) => (i + 1) % images.length)}
+                aria-label="Next screenshot"
                 style={{
+                  position: "absolute",
+                  right: 18,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  width: 44, height: 44,
+                  borderRadius: 999,
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.14)",
+                  color: "#fff",
+                  cursor: "pointer",
+                  display: "grid",
+                  placeItems: "center",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 6l6 6-6 6" /></svg>
+              </button>
+
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 22,
+                  left: "50%",
+                  transform: "translateX(-50%)",
                   fontFamily: "var(--font-mono)",
-                  fontSize: "0.72rem",
+                  fontSize: "0.74rem",
                   letterSpacing: "0.14em",
-                  color: "var(--subtext)",
+                  color: "rgba(255,255,255,0.75)",
+                  padding: "0.35rem 0.75rem",
+                  borderRadius: 999,
+                  background: "rgba(0,0,0,0.55)",
+                  border: "1px solid rgba(255,255,255,0.10)",
+                  pointerEvents: "none",
                 }}
               >
                 {String(lightboxIdx + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
-              </span>
-
-              <div style={{ display: "flex", gap: "0.4rem" }}>
-                {images.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => setLightboxIdx((i) => (i + 1) % images.length)}
-                    aria-label="Next screenshot"
-                    style={iconBtnStyle}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.10)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.04)")}
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M9 6l6 6-6 6" /></svg>
-                  </button>
-                )}
-                <button
-                  type="button"
-                  onClick={() => setLightboxIdx(null)}
-                  aria-label="Close preview"
-                  style={iconBtnStyle}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.10)"; e.currentTarget.style.transform = "rotate(90deg)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.transform = "rotate(0)"; }}
-                >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M6 18L18 6" /></svg>
-                </button>
               </div>
-            </div>
-          </div>
+            </>
+          )}
         </div>
       )}
     </div>
