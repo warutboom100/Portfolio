@@ -33,10 +33,10 @@ export function About() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.1rem", color: "var(--subtext)", fontSize: "1.05rem", lineHeight: 1.7, maxWidth: 580 }}>
               <p style={{ margin: 0 }}>
-                I&apos;m Software Developer with a Robotics & Automation Engineering background. I build end-to-end — from early user conversations through architecture, deployment, and measurement — with a focus on clean systems that developers enjoy working in.
+                I&apos;m Software Developer with a Robotics & Automation Engineering background. I build end to end from early user conversations through architecture, deployment, and measurement — with a focus on clean systems that developers enjoy working in.
               </p>
               <p style={{ margin: 0 }}>
-                Lately I&apos;ve been deep in AI tooling: LLM gateways, RAG pipelines, and AI Tools for Developer Productivity.
+                Lately I&apos;ve been deep in AI tooling: LLM gateways, RAG pipelines, and AI Framework for Developer Productivity.
               </p>
               <p style={{ margin: 0 }}>
                 I learn fast, adapt readily, and do my best work alongside people who care about their craft.
@@ -187,14 +187,16 @@ export function About() {
                   <span style={{ width: 11, height: 11, borderRadius: 99, background: "#28c840" }} />
                   <span style={{ marginLeft: "auto", fontSize: "0.72rem", color: "var(--muted)", fontFamily: "var(--font-mono)" }}>about.ts</span>
                 </div>
-                {codeLines.map((line, i) => (
-                  <div key={i} style={{ whiteSpace: "pre" }}>
-                    <span style={{ display: "inline-block", width: 24, color: "var(--muted)", opacity: 0.4, userSelect: "none" }}>{i + 1}</span>
-                    {line.map((part, j) => (
-                      <span key={j} style={{ color: part.c || "inherit" }}>{part.t}</span>
-                    ))}
-                  </div>
-                ))}
+                <div style={{ overflowX: "auto", maxWidth: "100%" }}>
+                  {codeLines.map((line, i) => (
+                    <div key={i} style={{ whiteSpace: "pre" }}>
+                      <span style={{ display: "inline-block", width: 24, color: "var(--muted)", opacity: 0.4, userSelect: "none" }}>{i + 1}</span>
+                      {line.map((part, j) => (
+                        <span key={j} style={{ color: part.c || "inherit" }}>{part.t}</span>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
 
 

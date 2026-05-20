@@ -112,7 +112,7 @@ export function Hero() {
           position: "absolute",
           width: 984,
           height: 527,
-          maxWidth: "120vw",
+          maxWidth: "100%",
           background: "#030712",
           filter: "blur(82px)",
           opacity: 0.9,
