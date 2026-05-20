@@ -6,7 +6,7 @@
   "tag": "Personal",
   "status": "In-progress",
   "year": "2026",
-  "images": ["projects/ai-agent/ai8.png","projects/ai-agent/ai1.PNG","projects/ai-agent/ai2.PNG","projects/ai-agent/ai3.PNG","projects/ai-agent/ai4.PNG","projects/ai-agent/ai5.PNG","projects/ai-agent/ai6.PNG","projects/ai-agent/ai7.png"],
+  "images": ["projects/ai-agent/ai8.png","projects/ai-agent/ai1.PNG","projects/ai-agent/ai2.PNG","projects/ai-agent/ai3.PNG","projects/ai-agent/ai4.PNG","projects/ai-agent/ai5.PNG","projects/ai-agent/ai6.PNG","projects/ai-agent/ai7.PNG"],
   "featured": true,
   "desc": "No-code platform for building and managing AI chatbots — configure prompts, RAG, and tools without touching code.",
   "purpose": "Let teams deploy and iterate on AI agents without writing code every time they change a prompt, swap a model, or add a tool.",
