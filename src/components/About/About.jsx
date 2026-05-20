@@ -6,7 +6,7 @@ export function About() {
 
   const codeLines = [
     [{ t: "const ", c: "#c084fc" }, { t: "developer", c: "#fcd34d" }, { t: " = {", c: "#e2e8f0" }],
-    [{ t: "  name: ", c: "#a5b4fc" }, { t: "'Warut'", c: "#86efac" }, { t: ",", c: "#e2e8f0" }],
+    [{ t: "  name: ", c: "#a5b4fc" }, { t: "'Boom'", c: "#86efac" }, { t: ",", c: "#e2e8f0" }],
     [{ t: "  role: ", c: "#a5b4fc" }, { t: "'Software Developer'", c: "#86efac" }, { t: ",", c: "#e2e8f0" }],
     [{ t: "  location: ", c: "#a5b4fc" }, { t: "'Bangkok, TH'", c: "#86efac" }, { t: ",", c: "#e2e8f0" }],
     [{ t: "  skill: [", c: "#a5b4fc" }, { t: "'WEBSITE', 'API', 'AI/LLM'", c: "#86efac" }, { t: "],", c: "#e2e8f0" }],
@@ -114,7 +114,7 @@ export function About() {
                   }}
                 >
                   <img
-                    src="/assets/hero/boom.jpeg"
+                    src="/assets/hero/profile.png"
                     alt="Warut — Software Developer"
                     width="220"
                     height="220"
