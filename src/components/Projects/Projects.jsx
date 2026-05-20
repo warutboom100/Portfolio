@@ -58,34 +58,73 @@ function ProjectModal({ project, onClose }) {
           position: "relative",
         }}
       >
-        <button
-          onClick={onClose}
-          aria-label="Close"
-          style={{
-            position: "absolute",
-            top: 14, right: 14,
-            zIndex: 3,
-            width: 34, height: 34,
-            borderRadius: 10,
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid var(--border)",
-            color: "var(--fg)",
-            cursor: "pointer",
-            display: "grid",
-            placeItems: "center",
-            transition: "all 0.2s ease",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "rgba(255,255,255,0.10)";
-            e.currentTarget.style.transform = "rotate(90deg)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "rgba(255,255,255,0.04)";
-            e.currentTarget.style.transform = "rotate(0)";
-          }}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M6 18L18 6" /></svg>
-        </button>
+        <div style={{ position: "absolute", top: 14, right: 14, zIndex: 3, display: "flex", gap: "0.4rem" }}>
+          {p.links?.github && (
+            <a
+              href={p.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View source on GitHub"
+              title="View source on GitHub"
+              style={{
+                height: 34,
+                padding: "0 0.7rem 0 0.55rem",
+                borderRadius: 10,
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid var(--border)",
+                color: "var(--fg)",
+                cursor: "pointer",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                textDecoration: "none",
+                fontFamily: "var(--font-display)",
+                fontSize: "0.78rem",
+                fontWeight: 500,
+                letterSpacing: "0.01em",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.10)";
+                e.currentTarget.style.transform = "translateY(-1px)";
+                e.currentTarget.style.borderColor = "rgba(168,85,247,0.45)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.borderColor = "var(--border)";
+              }}
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" /></svg>
+              <span>View Demo</span>
+            </a>
+          )}
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            style={{
+              width: 34, height: 34,
+              borderRadius: 10,
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid var(--border)",
+              color: "var(--fg)",
+              cursor: "pointer",
+              display: "grid",
+              placeItems: "center",
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255,255,255,0.10)";
+              e.currentTarget.style.transform = "rotate(90deg)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+              e.currentTarget.style.transform = "rotate(0)";
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M6 18L18 6" /></svg>
+          </button>
+        </div>
 
         <div
           style={{
@@ -102,7 +141,7 @@ function ProjectModal({ project, onClose }) {
             background: `radial-gradient(ellipse at top right, ${p.hue[0]}26, transparent 60%)`,
             pointerEvents: "none",
           }} />
-          <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "0.35rem", paddingRight: "3rem" }}>
+          <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "0.35rem", paddingRight: "8.5rem" }}>
             <div style={{ color: "var(--muted)", fontFamily: "var(--font-mono)", fontSize: "0.68rem", letterSpacing: "0.18em" }}>
               {p.tag.toUpperCase()} · {p.year}
             </div>
@@ -306,32 +345,6 @@ function ProjectModal({ project, onClose }) {
                 Live Demo
               </a>
             )}
-            {p.links?.github && (
-              <a
-                href={p.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="liquid-glass"
-                style={{
-                  padding: "0.85rem 1.5rem",
-                  borderRadius: 999,
-                  color: "var(--fg)",
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 500,
-                  textDecoration: "none",
-                  fontSize: "0.9rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  transition: "transform 0.3s ease",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-2px)")}
-                onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" /></svg>
-                View on GitHub
-              </a>
-            )}
           </div>
         </div>
       </div>
@@ -523,7 +536,7 @@ export function Projects() {
   const [openId, setOpenId] = useState(null);
   const [filter, setFilter] = useState("All");
 
-  const tags = ["All", "Work", "Freelance", "Side Project"];
+  const tags = ["All", "Full-time", "Freelance", "Personal"];
   const visible = filter === "All" ? projects : projects.filter((p) => p.tag === filter);
   const openProject = projects.find((p) => p.id === openId);
 

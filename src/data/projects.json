@@ -1,8 +1,29 @@
 [
+
+  {
+  "id": "agentstudio",
+  "name": "Agent Studio",
+  "tag": "Personal",
+  "status": "WIP",
+  "year": "2026",
+  "featured": true,
+  "desc": "No-code platform for building and managing AI chatbots configure prompts, RAG, and tools without touching code.",
+  "purpose": "Let teams deploy and iterate on AI agents without writing code every time they change a prompt, swap a model, or add a tool.",
+  "outcome": "Multi-agent platform supporting restaurant chatbots, customer support, and internal tools config changes apply instantly without redeployment.",
+  "longDesc": "Agent Studio is a no-code platform for creating and managing multiple AI agents from a single interface. Each agent is configured independently LLM provider, system prompt, knowledge base, and custom tools — through a guided setup wizard. Changes take effect instantly without redeployment, so non-technical teams can manage agents on their own. Includes RAG support with document upload and retrieval testing, a custom tool builder for function calling, live chat preview with debug mode, and a per-agent analytics dashboard tracking usage and cost.",
+  "highlights": [
+    "Multi-agent management each agent has its own LLM config, system prompt, RAG knowledge base, and tool bindings",
+    "No redeploy needed stateless architecture loads config from DB per request, so prompt and tool changes apply instantly",
+    "Built-in RAG, custom tool builder, live chat preview with debug output, and daily analytics per agent"
+  ],
+  "stack": ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Anthropic API", "Zustand"],
+  "hue": ["#6366f1", "#a855f7"],
+  "links": {}
+},
   {
     "id": "hrplatform",
     "name": "HRM Platform (ERP)",
-    "tag": "Work",
+    "tag": "Full-time",
     "status": "Production",
     "year": "2025",
     "featured": true,
@@ -16,20 +37,20 @@
       "Lark API integration for approval flows and real-time notifications without changing how teams communicate",
       "Covers the full employee lifecycle: personal data, KPI evaluations, attendance, leave/OT, and hiring pipelines"
     ],
-    "stack": ["React", "Node.js", "PostgreSQL", "Lark API"],
-    "hue": ["#34d399", "#3b82f6"],
+    "stack": ["React", "Node.js","RabbitMQ", "PostgreSQL", "Lark API"],
+    "hue": ["#7DE77A", "#3b82f6"],
     "links": {}
   },
   {
     "id": "emailclassifier",
     "name": "EmailClassifier (Service)",
-    "tag": "Work",
+    "tag": "Full-time",
     "status": "Production",
     "year": "2026",
     "featured": true,
-    "images": [],
-    "desc": "Automated email triage for insurance ops ML + rule-based classification of Thai-language emails with 80%+ accuracy.",
-    "purpose": "Reduce misdirected replies and surface critical email types cancellations, missing-document requests, and new tasks automatically without manual reading.",
+    "images": ["projects/email/email.png"],
+    "desc": "Automated email extraction for insurance ops ML + rule-based classification of Thai-language emails with 80%+ accuracy.",
+    "purpose": "Surface critical incoming emails cancellations, missing-document requests, and approval cases automatically, so staff can act on what matters without reading through every message.",
     "outcome": "80%+ classification accuracy in production; email triage fully automated zero manual sorting required per day.",
     "longDesc": "An automated email classification service that fetches incoming emails in real-time, classifies them as new tasks or customer replies using a trained ML model, extracts keywords and issue categories, and stores structured results in MySQL removing the need for staff to manually triage each message. Built with Celery and Redis for async parallel processing, containerised with Docker for production deployment.",
     "highlights": [
@@ -37,31 +58,77 @@
       "Async queue via Celery + Redis handles parallel ingestion without blocking, monitored via Flower dashboard",
       "Structured keyword extraction enables recurring analysis of agent workload and issue patterns over time"
     ],
-    "stack": ["Python", "Celery", "Redis", "MySQL", "scikit-learn", "PyThaiNLP", "Docker"],
+    "stack": ["Python", "ML/AI" ,"Redis","Celery", "MySQL", "PyThaiNLP", "Docker"],
     "hue": ["#34d399", "#10b981"],
     "links": {}
-  },
-  {
-    "id": "llmgateway",
-    "name": "LLM Gateway",
-    "tag": "Side Project",
-    "status": "WIP",
-    "year": "2025",
-    "featured": false,
-    "images": [],
-    "desc": "Internal AI gateway with multi-model routing (Ollama/OpenAI/Anthropic), rate limiting, cost tracking.",
-    "purpose": "Centralise model access, rate limiting, and cost tracking so teams can experiment with LLMs without juggling API keys or worrying about budget overruns.",
-    "outcome": "Unified gateway routing across 3 providers; per-team token-level cost tracking in a live dashboard.",
-    "longDesc": "LLM Gateway is an internal AI proxy that sits between application code and the underlying model providers — Ollama for self-hosted, plus OpenAI and Anthropic on the hosted side. It centralises rate limiting, cost tracking, and a lightweight prompt-testing UI so teams can experiment without juggling API keys or worrying about budget overruns.",
-    "highlights": [
-      "Pluggable model routing across Ollama, OpenAI, and Anthropic with fallback chains",
-      "Per-team rate limiting + token-level cost tracking surfaced in a dashboard",
-      "Built-in prompt testing UI for side-by-side comparison across models"
-    ],
-    "stack": ["Python", "Docker", "Go"],
-    "hue": ["#60a5fa", "#3b82f6"],
-    "links": {
-      "github": ""
-    }
+  },{
+  "id": "robotdashboard",
+  "name": "Robot Energy Dashboard",
+  "tag": "Freelance",
+  "status": "Shipped",
+  "images": ["projects/energy/robot4.PNG","projects/energy/robot1.PNG","projects/energy/robot2.PNG","projects/energy/robot3.PNG","projects/energy/robot5.png"],
+  "year": "2025",
+  "featured": false,
+  "desc": "Real-time energy monitoring dashboard for factory robots tracks power consumption per action and feeds data to an AI agent for analysis.",
+  "purpose": "Give factory engineers visibility into how each robot movement affects electricity usage, and enable AI-assisted analysis without manual data export.",
+  "outcome": "Live energy metrics per robot action; structured data pipeline feeding directly into an LLM for on-demand factory analysis.",
+  "longDesc": "A real-time IoT dashboard that monitors electrical energy consumption of factory robots and machinery. Sensor data streams in over MQTT, stored in MongoDB, and served through a FastAPI backend to a React frontend with live charts. A data agent layer connects the collected readings directly to OpenAI's API giving engineers the ability to ask questions about consumption patterns and anomalies without manually exporting or interpreting raw data.",
+  "highlights": [
+    "MQTT-to-MongoDB pipeline ingesting real-time power consumption per robot movement and action type",
+    "FastAPI backend serves structured time-series data to a React dashboard with live chart updates",
+    "Data agent layer connects factory readings to OpenAI API for on-demand AI-assisted energy analysis"
+  ],
+  "stack": ["React", "FastAPI", "MQTT", "MongoDB", "OpenAI API"],
+  "hue": ["#fcd34d", "#f59e0b"],
+  "links": {
+    "github": "https://github.com/warutboom100/Dashboard_Robot_Energy"
   }
+},{
+  "id": "bver",
+  "name": "BVER - Hospital Porter Tracker",
+  "images": ["projects/bver/bver1.PNG","projects/bver/bver2.PNG","projects/bver/bver3.PNG","projects/bver/bver4.PNG","projects/bver/bver5.PNG","projects/bver/bver6.PNG","projects/bver/bver7.PNG","projects/bver/bver8.PNG","projects/bver/bver9.PNG"],
+  "tag": "Freelance",
+  "status": "Shipped",
+  "year": "2024",
+  "featured": false,
+  "desc": "Indoor localization system for hospital porters real-time BLE positioning, task dispatch, and performance tracking across 3 platforms.",
+  "purpose": "Help hospital coordinators locate and dispatch porters instantly using indoor positioning, replacing radio calls and manual task logging.",
+  "outcome": "3 platforms shipped solo admin dashboard, porter mobile app, and nurse request portal with real-time location tracking via Bluetooth beacons.",
+  "longDesc": "A full indoor localization system built for hospital intralogistics, covering three platforms: a React admin dashboard for coordinators, a Flutter mobile app for porters, and a nurse-facing portal for submitting transport requests. The system uses Bluetooth beacon RSSI signals to pinpoint each porter's real-time location inside the hospital. Porters receive tasks through the app, and all task records count, transport time, distance feed into a performance evaluation system. Built end to end solo with React, FastAPI, and DynamoDB on the web side and Flutter on mobile.",
+  "highlights": [
+    "BLE beacon + RSSI-based indoor positioning tracks each porter's real-time location across hospital zones",
+    "Task dispatch and performance logging job count, transport time, and distance recorded for evaluation",
+    "3 platforms built solo: coordinator dashboard (React), porter mobile app (Flutter), nurse request portal (React)"
+  ],
+  "stack": ["React", "Flutter", "FastAPI", "DynamoDB", "Bluetooth BLE"],
+  "hue": ["#60a5fa", "#34d399"],
+  "links": {
+    "github": "https://github.com/warutboom100/BVER_DEMO"
+  }
+},
+{
+  "id": "chainlitchat",
+  "name": "Chatbot UI",
+  "tag": "Personal",
+  "images": ["projects/chatbot/bot2.PNG","projects/chatbot/bot1.PNG"],
+  "status": "Demo",
+  "year": "2024",
+  "featured": false,
+  "desc": "Conversational AI frontend integrated with a Chainlit backend enabling natural-language interaction between users and an AI-powered knowledge base.",
+  "purpose": "Build a chat interface that lets non-technical users query a knowledge base conversationally, without writing search queries or reading raw documents.",
+  "outcome": "Working RAG-based chatbot UI with real-time streaming responses; connected to Pinecone vector store for semantic retrieval.",
+  "longDesc": "A conversational AI frontend built on top of Chainlit's React client. Users type questions in plain language, the app sends queries to a Chainlit backend that retrieves semantically relevant chunks from a Pinecone vector store, and answers stream back in a chat interface. Focused on making AI-powered search feel natural and accessible for non-technical users.",
+  "highlights": [
+    "React frontend using @chainlit/react-client hooks for real-time chat session and message management",
+    "Semantic retrieval via Pinecone vector store plain-language queries, no keyword matching required",
+    "Streaming response UI so answers appear progressively, reducing perceived wait time"
+  ],
+  "stack": ["React","Python","Langchain","Langgraph" ,"Chainlit", "RAG"],
+  "hue": ["#a855f7", "#6366f1"],
+  "links": {
+    "github": "https://github.com/warutboom100/Chainlit-Clone"
+  }
+}
+
+
 ]
