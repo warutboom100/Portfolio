@@ -61,7 +61,7 @@ export function Navbar() {
             letterSpacing: "-0.02em",
           }}
         >
-          &lt;Warut.Meg/&gt;
+          &lt;Warut.Mek/&gt;
         </a>
 
         <div className="nav-center" style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
