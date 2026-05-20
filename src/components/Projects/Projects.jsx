@@ -382,7 +382,10 @@ function ProjectModal({ project, onClose }) {
 
       {lightboxIdx !== null && images[lightboxIdx] && (
         <div
-          onClick={(e) => { if (e.target === e.currentTarget) setLightboxIdx(null); }}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (e.target === e.currentTarget) setLightboxIdx(null);
+          }}
           role="dialog"
           aria-modal="true"
           aria-label={`${p.name} screenshot ${lightboxIdx + 1} of ${images.length}`}
