@@ -186,6 +186,8 @@ body::after {
 @media (max-width: 768px) {
   .section { padding: 80px 0; }
   .container { padding: 0 1.25rem; }
+  .about-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 2.5rem !important; }
+  .exp-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 2rem !important; }
 }
 
 /* Scrollbar */

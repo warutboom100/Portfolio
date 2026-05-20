@@ -57,7 +57,7 @@ export function About() {
           <div
             ref={rightRef}
             className={`reveal ${rightVisible ? "is-visible" : ""}`}
-            style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: "2.25rem" }}
+            style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: "2.25rem", minWidth: 0, width: "100%" }}
           >
             <div style={{ position: "relative", display: "grid", placeItems: "center" }}>
               <div
@@ -179,6 +179,10 @@ export function About() {
                   fontSize: "0.92rem",
                   lineHeight: 1.8,
                   willChange: "transform",
+                  width: "100%",
+                  maxWidth: "100%",
+                  minWidth: 0,
+                  boxSizing: "border-box",
                 }}
               >
                 <div style={{ display: "flex", gap: 6, paddingBottom: "0.75rem", borderBottom: "1px solid rgba(255,255,255,0.06)", marginBottom: "1rem", alignItems: "center" }}>
