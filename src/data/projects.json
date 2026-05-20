@@ -1,0 +1,67 @@
+[
+  {
+    "id": "hrplatform",
+    "name": "HRM Platform (ERP)",
+    "tag": "Work",
+    "status": "Production",
+    "year": "2025",
+    "featured": true,
+    "images": ["projects/hrm/dashboard.png","projects/hrm/hrm1.png","projects/hrm/hrm2.png","projects/hrm/hrm3.png","projects/hrm/hrm4.png","projects/hrm/hrm5.png"],
+    "desc": "Internal HR platform for 200+ employees covering the full employee lifecycle records, department management, KPI tracking, attendance, leave/OT, recruitment, and offboarding.",
+    "purpose": "Consolidate paper forms and Personal data chains into a single HR system, integrated with Lark for real-time approvals and notifications.",
+    "outcome": "200+ employees onboarded; manual paperwork eliminated across KPI cycles, leave requests, and hiring workflows.",
+    "longDesc": "An internal HR platform built solo from requirements gathering through production deployment. The system covers the full employee lifecycle personal records, KPI evaluation cycles, attendance tracking, leave and OT requests, and recruitment pipelines, Integrated with the Lark API so managers receive real-time approval notifications inside the tools they already use daily.",
+    "highlights": [
+      "Built end to end solo from early HR stakeholder interviews through architecture, development, and production deploy",
+      "Lark API integration for approval flows and real-time notifications without changing how teams communicate",
+      "Covers the full employee lifecycle: personal data, KPI evaluations, attendance, leave/OT, and hiring pipelines"
+    ],
+    "stack": ["React", "Node.js", "PostgreSQL", "Lark API"],
+    "hue": ["#34d399", "#3b82f6"],
+    "links": {}
+  },
+  {
+    "id": "emailclassifier",
+    "name": "EmailClassifier (Service)",
+    "tag": "Work",
+    "status": "Production",
+    "year": "2026",
+    "featured": true,
+    "images": [],
+    "desc": "Automated email triage for insurance ops ML + rule-based classification of Thai-language emails with 80%+ accuracy.",
+    "purpose": "Reduce misdirected replies and surface critical email types cancellations, missing-document requests, and new tasks automatically without manual reading.",
+    "outcome": "80%+ classification accuracy in production; email triage fully automated zero manual sorting required per day.",
+    "longDesc": "An automated email classification service that fetches incoming emails in real-time, classifies them as new tasks or customer replies using a trained ML model, extracts keywords and issue categories, and stores structured results in MySQL removing the need for staff to manually triage each message. Built with Celery and Redis for async parallel processing, containerised with Docker for production deployment.",
+    "highlights": [
+      "80%+ classification accuracy on Thai-language production email traffic hybrid ML + rule-based pipeline",
+      "Async queue via Celery + Redis handles parallel ingestion without blocking, monitored via Flower dashboard",
+      "Structured keyword extraction enables recurring analysis of agent workload and issue patterns over time"
+    ],
+    "stack": ["Python", "Celery", "Redis", "MySQL", "scikit-learn", "PyThaiNLP", "Docker"],
+    "hue": ["#34d399", "#10b981"],
+    "links": {}
+  },
+  {
+    "id": "llmgateway",
+    "name": "LLM Gateway",
+    "tag": "Side Project",
+    "status": "WIP",
+    "year": "2025",
+    "featured": false,
+    "images": [],
+    "desc": "Internal AI gateway with multi-model routing (Ollama/OpenAI/Anthropic), rate limiting, cost tracking.",
+    "purpose": "Centralise model access, rate limiting, and cost tracking so teams can experiment with LLMs without juggling API keys or worrying about budget overruns.",
+    "outcome": "Unified gateway routing across 3 providers; per-team token-level cost tracking in a live dashboard.",
+    "longDesc": "LLM Gateway is an internal AI proxy that sits between application code and the underlying model providers — Ollama for self-hosted, plus OpenAI and Anthropic on the hosted side. It centralises rate limiting, cost tracking, and a lightweight prompt-testing UI so teams can experiment without juggling API keys or worrying about budget overruns.",
+    "highlights": [
+      "Pluggable model routing across Ollama, OpenAI, and Anthropic with fallback chains",
+      "Per-team rate limiting + token-level cost tracking surfaced in a dashboard",
+      "Built-in prompt testing UI for side-by-side comparison across models"
+    ],
+    "stack": ["Python", "Docker", "Go"],
+    "hue": ["#60a5fa", "#3b82f6"],
+    "links": {
+      "github": ""
+    }
+  }
+]
