@@ -20,7 +20,34 @@
   "stack": ["Next.js", "GO (Fiber)", "FastAPI", "AI/LLM", "LangChain", "LangGraph","PostgreSQL","ChromaDB"],
   "hue": ["#6366f1", "#a855f7"],
   "links": {}
-},
+},{
+  "id": "counter-service-platform",
+  "name": "Counter Service Payment Platform",
+  "tag": "Personal",
+  "status": "Demo",
+  "year": "2026",
+  "images": ["projects/counter/counter1.PNG","projects/counter/counter2.PNG","projects/counter/counter2.PNG","projects/counter/counter3.PNG","projects/counter/counter4.PNG","projects/counter/counter5.PNG","projects/counter/counter6.PNG","projects/counter/counter7.PNG","projects/counter/counter8.PNG","projects/counter/counter9.PNG"],
+  "featured": true,
+  "desc": "Production-grade microservice platform simulating Counter Service (CP Group) business domains — Concert Ticket Booking with flash-sale concurrency handling and Bill Payment with double-charge protection.",
+  "purpose": "Built to explore microservice architecture patterns in a realistic business context — payment flows, concurrency handling, and distributed event delivery across multiple services.",
+  "outcome": "4 backend microservices + Next.js dashboard communicating via Redis Streams, with atomic seat locking, idempotency guarantees, webhook delivery, and a reserve-then-pay booking flow.",
+  "highlights": [
+    "Atomic Redis seat locking (DECR + SET NX) — prevents double booking without DB pessimistic locks",
+    "Two-phase idempotency key pattern — protects against duplicate payments and race conditions",
+    "Outbox pattern with Redis Streams consumer groups — durable event delivery across services",
+    "Reserve-then-pay flow — seat held 10 min, auto-released by expiry worker if unpaid",
+    "HMAC-SHA256 signed webhooks with exponential retry and dead letter queue",
+    "API Gateway with JWT auth, API Key middleware, and proxy routing to all downstream services"
+  ],
+  "stack": [
+    "Node.js","Next.js", "PostgreSQL", "Redis"
+  ],
+  "hue": ["#E2A92D", "#DDA846"],
+  "links": {
+    "github": "https://github.com/Iboomnarak/Booking_service"
+  }
+}
+,
   {
     "id": "hrplatform",
     "name": "HRM Platform (ERP)",
