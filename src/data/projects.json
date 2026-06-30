@@ -1,8 +1,32 @@
 [
+  {
+  "id": "food-agent",
+  "name": "Kitchen Recall Assistant",
+  "tag": "Freelance",
+  "images": ["projects/food-agent/food9.png", "projects/food-agent/food2.png", "projects/food-agent/food3.png", "projects/food-agent/food4.png", "projects/food-agent/food5.png", "projects/food-agent/food6.png", "projects/food-agent/food8.png","projects/food-agent/food7.png"],
+  "status": "Demo",
+  "year": "2026",
+  "featured": true,
+  "desc": "Thai-recipe RAG assistant that helps kitchen staff recall a dish's steps and ingredients mid-shift through natural-language chat.",
+  "purpose": "Give commis chefs and kitchen assistants a fast, recipe-accurate answer when they forget a dish's steps or ingredients mid-shift — instead of guessing (and risking a bad dish) or stopping to ask someone.",
+  "outcome": "Working Gradio chat app over a Chroma vector store of 159 Thai recipes, driven by a multi-stage RAG pipeline and backed by a full evaluation suite with a metrics dashboard.",
+  "longDesc": "A RAG assistant for professional kitchens, over 159 Thai recipes. Recipes are LLM-enriched with a searchable headline + summary, but answers stay grounded in the original text to avoid hallucinated ingredients or steps. At query time an LLM routes intent (skipping retrieval for smalltalk) and splits comparative or multi-ingredient questions into one search per dish before reranking and generating a no-guessing answer. Provider-agnostic (OpenRouter or local Ollama), with a self-built eval harness scoring retrieval (MRR/nDCG) and answer quality (LLM-as-judge).",
+  "highlights": [
+    "Multi-query retrieval: an LLM decomposes comparative / multi-ingredient questions into per-dish vector searches, then dedupe-merges results so every dish surfaces",
+    "LLM chunk enrichment that embeds a generated headline + summary for recall while keeping the original recipe text as the answer's source of truth (no hallucinated ingredients/steps)",
+    "Self-built evaluation suite — MRR / nDCG / keyword coverage plus LLM-as-judge scoring, visualized in a Gradio metrics dashboard"
+  ],
+  "stack": ["Python", "LangChain", "Chroma", "Gradio", "Pydantic", "OpenRouter", "RAG"],
+  "hue": ["#f59e0b", "#ef4444"],
+  "links": {
+    "github": "https://github.com/warutboom100/Food-Agent-Assistant"
+  }
+},
+
 
   {
   "id": "agentstudio",
-  "name": "Agent Studio (DRAFT)",
+  "name": "Agent Studio",
   "tag": "Personal",
   "status": "In-progress",
   "year": "2026",
@@ -44,7 +68,7 @@
   ],
   "hue": ["#E2A92D", "#DDA846"],
   "links": {
-    "github": "https://github.com/Iboomnarak/Booking_service"
+    
   }
 }
 ,
