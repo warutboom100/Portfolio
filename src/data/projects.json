@@ -114,6 +114,28 @@
     "hue": ["#34d399", "#10b981"],
     "links": {}
   },{
+  "id": "CarManagementSystem",
+  "name": "Car Management System",
+  "images": ["projects/car/main.png","projects/car/editcar.png","projects/car/addcar.png","projects/car/deletecar.png","projects/car/loginpage.png","projects/car/registerpage.png"],
+  "tag": "Personal",
+  "status": "Done",
+  "year": "2026",
+  "featured": true,
+  "desc": "Full-stack fleet CRUD web app replacing a shared paper logbook JWT auth, searchable car records, activity audit logs, and dark mode.",
+  "purpose": "Replace the company's handwritten car logbook with a shareable web system covering car records, user accounts, and a full audit trail of every change.",
+  "outcome": "Car records digitised into a single shared system replacing the paper logbook with searchable data and a full audit trail of every change.",
+  "longDesc": "A 3-tier car management platform with a Next.js frontend, Express REST API, and PostgreSQL database. Users register and log in via JWT (access + httpOnly refresh token with auto-refresh interceptor), then manage car records through a dashboard with clickable stat-card filters, debounced search, column sorting, color/status dropdown filters, and server-side pagination. Every create/update/delete is written to an activity log in the same transaction, snapshotted so history survives deletion, with created-by/updated-by tracking per record. Hardened with helmet, rate limiting, Zod validation on every input, and Thai-localised error messages.",
+  "highlights": [
+    "Auth with JWT access + httpOnly refresh token, multi-session support, and Axios auto-refresh with request queueing on 401",
+    "Car CRUD with server-side search, status/color filters, sorting, pagination, and transactional activity logs that survive record deletion",
+    "Dockerised 3-tier deploy (Next.js / Express+Knex / Postgres) with 40 Vitest+Supertest tests on an isolated test database"
+  ],
+  "stack": ["Next.js", "React", "TanStackQuery", "Zustand", "Tailwind", "Express", "Knex", "Zod", "PostgreSQL", "Docker", "Vitest"],
+  "hue": ["#3b82f6", "#f59e0b"],
+  "links": {"github": "https://github.com/warutboom100/Test-Haupcar-Car-Management"}
+}
+,
+{
   "id": "insureflow",
   "name": "Insurance Renewal Platform",
   "images": ["projects/renewal/renewal1.PNG","projects/renewal/renewal2.PNG","projects/renewal/renewal3.PNG","projects/renewal/renewal4.PNG","projects/renewal/renewal5.PNG","projects/renewal/renewal6.PNG","projects/renewal/renewal7.PNG"],
@@ -134,6 +156,7 @@
   "hue": ["#F16363", "#a855f7"],
   "links": {}
 },
+
   {
   "id": "robotdashboard",
   "name": "Robot Energy Dashboard",
