@@ -100,7 +100,7 @@
     "status": "Production",
     "year": "2026",
     "featured": true,
-    "images": ["projects/email/email.png"],
+    "images": ["projects/email/email.png","projects/email/email.png"],
     "desc": "Automated email extraction for insurance ops ML + rule-based classification of Thai-language emails with 80%+ accuracy.",
     "purpose": "Surface critical incoming emails cancellations, missing-document requests, and approval cases automatically, so staff can act on what matters without reading through every message.",
     "outcome": "80%+ classification accuracy in production; email triage fully automated zero manual sorting required per day.",
@@ -113,7 +113,33 @@
     "stack": ["Python", "ML/AI" ,"Redis","Celery", "MySQL", "PyThaiNLP", "Docker"],
     "hue": ["#34d399", "#10b981"],
     "links": {}
-  },{
+  },
+   {
+  "id": "cinema-ticket-booking",
+  "name": "Cinema Ticket Booking System",
+  "images": ["projects/cinema/cinema1.png","projects/cinema/cinema2.png"],
+  "tag": "Personal",
+  "status": "Done",
+  "year": "2026",
+  "featured": true,
+  "desc": "An online movie ticket booking app focused on solving the 'two people grabbing the same seat at once' problem.",
+  "purpose": "To build a system that handles real concurrent seat booking — where many users compete for the same seat at the same time — without ever double-booking a seat.",
+  "outcome": "A complete booking flow from seat selection to payment to an admin dashboard, that reliably prevents double-booking even under simultaneous requests.",
+  "longDesc": "A movie ticket booking system where users pick seats from a theater map and get a 5-minute temporary hold to complete payment. During that window, everyone else sees those seats locked in real time, and if payment isn't completed in time the seats are released automatically. The core challenge is guaranteeing that a single seat can only be booked by one person — even when many users tap 'book' within the same split second — solved with Redis for short-lived seat locks and a MongoDB unique index as the final guard against duplicates. It supports both email and Google sign-in, plus an admin panel to review bookings and a full activity audit log.",
+  "highlights": [
+    "Prevents double-booking under concurrent requests using Redis locks + a MongoDB unique index",
+    "Real-time seat map updates over SSE — see seats lock/book instantly with no refresh",
+    "5-minute temporary seat hold that auto-releases if payment isn't completed in time",
+    "Email/password and Google OAuth login with refresh-token rotation",
+    "Admin dashboard for bookings and audit logs with filters",
+    "API and background Worker split into separate processes for independent scaling"
+  ],
+  "stack": ["Go", "Gin", "Nuxt 4", "Tailwind CSS", "MongoDB", "Redis", "RabbitMQ", "SSE", "Docker"],
+  "hue": ["#3b82f6", "#f59e0b"],
+  "links": {"github": "https://github.com/warutboom100/Test-CinamaTicketBooking"}
+}
+
+,{
   "id": "CarManagementSystem",
   "name": "Car Management System",
   "images": ["projects/car/main.png","projects/car/editcar.png","projects/car/addcar.png","projects/car/deletecar.png","projects/car/loginpage.png","projects/car/registerpage.png"],
