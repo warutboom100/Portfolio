@@ -1,77 +1,166 @@
 [
   {
-  "id": "food-agent",
-  "name": "Kitchen Recall Assistant",
-  "tag": "Freelance",
-  "images": ["projects/food-agent/food9.png", "projects/food-agent/food2.png", "projects/food-agent/food3.png", "projects/food-agent/food4.png", "projects/food-agent/food5.png", "projects/food-agent/food6.png", "projects/food-agent/food8.png","projects/food-agent/food7.png","projects/food-agent/food10.png"],
-  "status": "Demo",
-  "year": "2026",
-  "featured": true,
-  "desc": "Thai-recipe RAG assistant that helps kitchen staff recall a dish's steps and ingredients mid-shift through natural-language chat.",
-  "purpose": "Give commis chefs and kitchen assistants a fast, recipe-accurate answer when they forget a dish's steps or ingredients mid-shift — instead of guessing (and risking a bad dish) or stopping to ask someone.",
-  "outcome": "Working Gradio chat app over a Chroma vector store of 159 Thai recipes, driven by a multi-stage RAG pipeline and backed by a full evaluation suite with a metrics dashboard.",
-  "longDesc": "A RAG assistant for professional kitchens, over 159 Thai recipes. Recipes are LLM-enriched with a searchable headline + summary, but answers stay grounded in the original text to avoid hallucinated ingredients or steps. At query time an LLM routes intent (skipping retrieval for smalltalk) and splits comparative or multi-ingredient questions into one search per dish before reranking and generating a no-guessing answer. Provider-agnostic (OpenRouter or local Ollama), with a self-built eval harness scoring retrieval (MRR/nDCG) and answer quality (LLM-as-judge).",
-  "highlights": [
-    "Multi-query retrieval: an LLM decomposes comparative / multi-ingredient questions into per-dish vector searches, then dedupe-merges results so every dish surfaces",
-    "LLM chunk enrichment that embeds a generated headline + summary for recall while keeping the original recipe text as the answer's source of truth (no hallucinated ingredients/steps)",
-    "Self-built evaluation suite — MRR / nDCG / keyword coverage plus LLM-as-judge scoring, visualized in a Gradio metrics dashboard"
-  ],
-  "stack": ["Python", "LangChain", "Chroma", "Gradio", "Pydantic", "OpenRouter", "RAG"],
-  "hue": ["#f59e0b", "#ef4444"],
-  "links": {
-    "github": "https://github.com/warutboom100/Food-Agent-Assistant"
-  }
-},
-
-
+    "id": "food-agent",
+    "name": "Kitchen Recall Assistant",
+    "tag": "Freelance",
+    "images": [
+      "projects/food-agent/food9.png",
+      "projects/food-agent/food2.png",
+      "projects/food-agent/food3.png",
+      "projects/food-agent/food4.png",
+      "projects/food-agent/food5.png",
+      "projects/food-agent/food6.png",
+      "projects/food-agent/food8.png",
+      "projects/food-agent/food7.png",
+      "projects/food-agent/food10.png"
+    ],
+    "status": "Demo",
+    "year": "2026",
+    "featured": true,
+    "desc": "Thai-recipe RAG assistant that helps kitchen staff recall a dish's steps and ingredients mid-shift through natural-language chat.",
+    "purpose": "Give commis chefs and kitchen assistants a fast, recipe-accurate answer when they forget a dish's steps or ingredients mid-shift — instead of guessing (and risking a bad dish) or stopping to ask someone.",
+    "outcome": "Working Gradio chat app over a Chroma vector store of 159 Thai recipes, driven by a multi-stage RAG pipeline and backed by a full evaluation suite with a metrics dashboard.",
+    "longDesc": "A RAG assistant for professional kitchens, over 159 Thai recipes. Recipes are LLM-enriched with a searchable headline + summary, but answers stay grounded in the original text to avoid hallucinated ingredients or steps. At query time an LLM routes intent (skipping retrieval for smalltalk) and splits comparative or multi-ingredient questions into one search per dish before reranking and generating a no-guessing answer. Provider-agnostic (OpenRouter or local Ollama), with a self-built eval harness scoring retrieval (MRR/nDCG) and answer quality (LLM-as-judge).",
+    "highlights": [
+      "Multi-query retrieval: an LLM decomposes comparative / multi-ingredient questions into per-dish vector searches, then dedupe-merges results so every dish surfaces",
+      "LLM chunk enrichment that embeds a generated headline + summary for recall while keeping the original recipe text as the answer's source of truth (no hallucinated ingredients/steps)",
+      "Self-built evaluation suite — MRR / nDCG / keyword coverage plus LLM-as-judge scoring, visualized in a Gradio metrics dashboard"
+    ],
+    "stack": [
+      "Python",
+      "LangChain",
+      "Chroma",
+      "Gradio",
+      "Pydantic",
+      "OpenRouter",
+      "RAG"
+    ],
+    "hue": [
+      "#f59e0b",
+      "#ef4444"
+    ],
+    "links": {
+      "github": "https://github.com/warutboom100/Food-Agent-Assistant"
+    }
+  },
   {
-  "id": "agentstudio",
-  "name": "Agent Studio",
-  "tag": "Personal",
-  "status": "In-progress",
-  "year": "2026",
-  "images": ["projects/ai-agent/ai8.png","projects/ai-agent/ai1.PNG","projects/ai-agent/ai2.PNG","projects/ai-agent/ai3.PNG","projects/ai-agent/ai4.PNG","projects/ai-agent/ai5.PNG","projects/ai-agent/ai6.PNG","projects/ai-agent/ai7.PNG"],
-  "featured": true,
-  "desc": "No-code platform for building and managing AI chatbots — configure prompts, RAG, and tools without touching code.",
-  "purpose": "Let teams deploy and iterate on AI agents without writing code every time they change a prompt, swap a model, or add a tool.",
-  "outcome": "Multi-agent platform supporting restaurant chatbots, customer support, and internal tools — config changes apply instantly without redeployment.",
-  "longDesc": "Agent Studio is a no-code platform for creating and managing multiple AI agents from a single interface. Each agent is configured independently LLM provider, system prompt, knowledge base, and custom tools — through a guided setup wizard. Changes take effect instantly without redeployment, so non-technical teams can manage agents on their own. Includes RAG support with document upload and retrieval testing, a custom tool builder for function calling, live chat preview with debug mode, and a per-agent analytics dashboard tracking usage and cost.",
-  "highlights": [
-    "Multi-agent management: each agent has its own LLM config, system prompt, RAG knowledge base, and tool bindings",
-    "No redeploy needed: stateless architecture loads config from DB per request, so prompt and tool changes apply instantly",
-    "Built-in RAG, custom tool builder, live chat preview with debug output, and daily analytics per agent"
-  ],
-  "stack": ["Next.js", "GO (Fiber)", "FastAPI", "AI/LLM", "LangChain", "LangGraph","PostgreSQL","ChromaDB"],
-  "hue": ["#6366f1", "#a855f7"],
-  "links": {}
-},{
-  "id": "counter-service-platform",
-  "name": "Counter Service Payment Platform",
-  "tag": "Personal",
-  "status": "Demo",
-  "year": "2026",
-  "images": ["projects/counter/counter1.PNG","projects/counter/counter2.PNG","projects/counter/counter2.PNG","projects/counter/counter3.PNG","projects/counter/counter4.PNG","projects/counter/counter5.PNG","projects/counter/counter6.PNG","projects/counter/counter7.PNG","projects/counter/counter8.PNG","projects/counter/counter9.PNG"],
-  "featured": true,
-  "desc": "Production-grade microservice platform simulating Counter Service (CP Group) business domains — Concert Ticket Booking with flash-sale concurrency handling and Bill Payment with double-charge protection.",
-  "purpose": "Built to explore microservice architecture patterns in a realistic business context — payment flows, concurrency handling, and distributed event delivery across multiple services.",
-  "outcome": "4 backend microservices + Next.js dashboard communicating via Redis Streams, with atomic seat locking, idempotency guarantees, webhook delivery, and a reserve-then-pay booking flow.",
-  "highlights": [
-    "Atomic Redis seat locking (DECR + SET NX) — prevents double booking without DB pessimistic locks",
-    "Two-phase idempotency key pattern — protects against duplicate payments and race conditions",
-    "Outbox pattern with Redis Streams consumer groups — durable event delivery across services",
-    "Reserve-then-pay flow — seat held 10 min, auto-released by expiry worker if unpaid",
-    "HMAC-SHA256 signed webhooks with exponential retry and dead letter queue",
-    "API Gateway with JWT auth, API Key middleware, and proxy routing to all downstream services"
-  ],
-  "stack": [
-    "Node.js","Next.js", "PostgreSQL", "Redis"
-  ],
-  "hue": ["#E2A92D", "#DDA846"],
-  "links": {
-    
-  }
-}
-,
+    "id": "agentstudio",
+    "name": "Agent Studio",
+    "tag": "Personal",
+    "status": "In-progress",
+    "year": "2026",
+    "images": [
+      "projects/ai-agent/ai8.png",
+      "projects/ai-agent/ai1.PNG",
+      "projects/ai-agent/ai2.PNG",
+      "projects/ai-agent/ai3.PNG",
+      "projects/ai-agent/ai4.PNG",
+      "projects/ai-agent/ai5.PNG",
+      "projects/ai-agent/ai6.PNG",
+      "projects/ai-agent/ai7.PNG"
+    ],
+    "featured": true,
+    "desc": "No-code platform for building and managing AI chatbots — configure prompts, RAG, and tools without touching code.",
+    "purpose": "Let teams deploy and iterate on AI agents without writing code every time they change a prompt, swap a model, or add a tool.",
+    "outcome": "Multi-agent platform supporting restaurant chatbots, customer support, and internal tools — config changes apply instantly without redeployment.",
+    "longDesc": "Agent Studio is a no-code platform for creating and managing multiple AI agents from a single interface. Each agent is configured independently LLM provider, system prompt, knowledge base, and custom tools — through a guided setup wizard. Changes take effect instantly without redeployment, so non-technical teams can manage agents on their own. Includes RAG support with document upload and retrieval testing, a custom tool builder for function calling, live chat preview with debug mode, and a per-agent analytics dashboard tracking usage and cost.",
+    "highlights": [
+      "Multi-agent management: each agent has its own LLM config, system prompt, RAG knowledge base, and tool bindings",
+      "No redeploy needed: stateless architecture loads config from DB per request, so prompt and tool changes apply instantly",
+      "Built-in RAG, custom tool builder, live chat preview with debug output, and daily analytics per agent"
+    ],
+    "stack": [
+      "Next.js",
+      "GO (Fiber)",
+      "FastAPI",
+      "AI/LLM",
+      "LangChain",
+      "LangGraph",
+      "PostgreSQL",
+      "ChromaDB"
+    ],
+    "hue": [
+      "#6366f1",
+      "#a855f7"
+    ],
+    "links": {}
+  },
+  {
+    "id": "counter-service-platform",
+    "name": "Counter Service Payment Platform",
+    "tag": "Personal",
+    "status": "Demo",
+    "year": "2026",
+    "images": [
+      "projects/counter/counter1.PNG",
+      "projects/counter/counter2.PNG",
+      "projects/counter/counter2.PNG",
+      "projects/counter/counter3.PNG",
+      "projects/counter/counter4.PNG",
+      "projects/counter/counter5.PNG",
+      "projects/counter/counter6.PNG",
+      "projects/counter/counter7.PNG",
+      "projects/counter/counter8.PNG",
+      "projects/counter/counter9.PNG"
+    ],
+    "featured": true,
+    "desc": "Production-grade microservice platform simulating Counter Service (CP Group) business domains — Concert Ticket Booking with flash-sale concurrency handling and Bill Payment with double-charge protection.",
+    "purpose": "Built to explore microservice architecture patterns in a realistic business context — payment flows, concurrency handling, and distributed event delivery across multiple services.",
+    "outcome": "4 backend microservices + Next.js dashboard communicating via Redis Streams, with atomic seat locking, idempotency guarantees, webhook delivery, and a reserve-then-pay booking flow.",
+    "highlights": [
+      "Atomic Redis seat locking (DECR + SET NX) — prevents double booking without DB pessimistic locks",
+      "Two-phase idempotency key pattern — protects against duplicate payments and race conditions",
+      "Outbox pattern with Redis Streams consumer groups — durable event delivery across services",
+      "Reserve-then-pay flow — seat held 10 min, auto-released by expiry worker if unpaid",
+      "HMAC-SHA256 signed webhooks with exponential retry and dead letter queue",
+      "API Gateway with JWT auth, API Key middleware, and proxy routing to all downstream services"
+    ],
+    "stack": [
+      "Node.js",
+      "Next.js",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "hue": [
+      "#E2A92D",
+      "#DDA846"
+    ],
+    "links": {}
+  },
+  {
+    "id": "plcmachine",
+    "name": "Food Sterilization Machine",
+    "images": [
+      "projects/plc/plc1.jpg",
+      "projects/plc/plc2.jpg",
+      "projects/plc/plc3.jpg",
+      "projects/plc/plc4.jpg"
+    ],
+    "tag": "Freelance",
+    "status": "Production",
+    "year": "2025",
+    "featured": true,
+    "desc": "Real-time monitoring dashboard for a PLC based food sterilization machine.",
+    "purpose": "To remotely monitor temperature and pressure for food sterilization, replacing manual checks with an online dashboard.",
+    "outcome": "Delivered a realtime web dashboard that tracks critical sterilization metrics, ensuring food safety and reducing manual on site checks.",
+    "longDesc": "A web based monitoring system designed for food sterilization processes. The system connects directly to industrial PLCs to track critical parameters like temperature and pressure in realtime. This allows operators to monitor sterilization cycles remotely through an intuitive online dashboard, ensuring consistent food safety compliance and operational efficiency without the need for constant physical supervision.",
+    "highlights": [
+      "PLC integration for realtime temperature and pressure tracking",
+      "Online dashboard for remote monitoring of sterilization cycles",
+      "Automated data logging for food safety compliance and quality control",
+      "Replaced manual on site checks with a centralized web interface"
+    ],
+    "stack": [
+      "GXWork3",
+      "Electric wiring",
+      "Networking"
+    ],
+    "hue": [
+      "#10B1AF",
+      "#24D4CA"
+    ],
+    "links": {}
+  },
   {
     "id": "hrplatform",
     "name": "HRM Platform (ERP)",
@@ -79,7 +168,14 @@
     "status": "Production",
     "year": "2025",
     "featured": true,
-    "images": ["projects/hrm/dashboard.png","projects/hrm/hrm1.png","projects/hrm/hrm2.png","projects/hrm/hrm3.png","projects/hrm/hrm4.png","projects/hrm/hrm5.png"],
+    "images": [
+      "projects/hrm/dashboard.png",
+      "projects/hrm/hrm1.png",
+      "projects/hrm/hrm2.png",
+      "projects/hrm/hrm3.png",
+      "projects/hrm/hrm4.png",
+      "projects/hrm/hrm5.png"
+    ],
     "desc": "Internal HR platform for 200+ employees covering the full employee lifecycle records, department management, KPI tracking, attendance, leave/OT, recruitment, and offboarding.",
     "purpose": "Consolidate paper forms and personal data silos into a single HR system, integrated with Lark for real-time approvals and notifications.",
     "outcome": "200+ employees onboarded; manual paperwork eliminated across KPI cycles, leave requests, and hiring workflows.",
@@ -89,8 +185,56 @@
       "Lark API integration for approval flows and real-time notifications without changing how teams communicate",
       "Covers the full employee lifecycle: personal data, KPI evaluations, attendance, leave/OT, and hiring pipelines"
     ],
-    "stack": ["React", "Node.js","RabbitMQ", "PostgreSQL", "Lark API"],
-    "hue": ["#7DE77A", "#3b82f6"],
+    "stack": [
+      "React",
+      "Node.js",
+      "RabbitMQ",
+      "PostgreSQL",
+      "Lark API"
+    ],
+    "hue": [
+      "#7DE77A",
+      "#3b82f6"
+    ],
+    "links": {}
+  },
+  {
+    "id": "insureflow",
+    "name": "Insurance Renewal Platform",
+    "images": [
+      "projects/renewal/renewal1.PNG",
+      "projects/renewal/renewal2.PNG",
+      "projects/renewal/renewal3.PNG",
+      "projects/renewal/renewal4.PNG",
+      "projects/renewal/renewal5.PNG",
+      "projects/renewal/renewal6.PNG",
+      "projects/renewal/renewal7.PNG"
+    ],
+    "tag": "Full-time",
+    "status": "Production",
+    "year": "2025",
+    "featured": true,
+    "desc": "Internal ERP for insurance renewal automated email/SMS reminders, agent call tracking, and KPI dashboards for premium collection.",
+    "purpose": "Replace manual renewal follow-ups with an end-to-end workflow covering policy alerts, batch communications, and agent performance tracking.",
+    "outcome": "Full renewal cycle digitised from policy expiry alerts to batch email/SMS dispatch and call logging with live KPI dashboards for managers.",
+    "longDesc": "An internal insurance renewal platform built for agents and managers to manage the full policy renewal lifecycle. Agents work through a guided multi-step workflow to upload renewal data, preview and send batch email and SMS reminders with urgency-based prioritisation, and log call outcomes per customer lead. Managers get a KPI dashboard with renewal stats, staff performance tables, and color-coded expiry tracking. Includes lead management with task transfer between agents, blacklist/blocklist controls, and Excel export across all reports.",
+    "highlights": [
+      "Multi-step renewal workflow Excel upload → document preview → batch email → batch SMS with urgency levels",
+      "Lead management for agents: per-lead call logging with status, notes, and next-call scheduling; bulk task transfer for managers",
+      "KPI dashboard with renewal stats, monthly bar charts, staff performance tables, and color-coded expiry urgency rows"
+    ],
+    "stack": [
+      "Next.js",
+      "React",
+      "Ant Design",
+      "Node.js",
+      "MySQL",
+      "Redis"
+    ],
+    "hue": [
+      "#F16363",
+      "#a855f7"
+    ],
     "links": {}
   },
   {
@@ -100,7 +244,10 @@
     "status": "Production",
     "year": "2026",
     "featured": true,
-    "images": ["projects/email/email.png","projects/email/email.png"],
+    "images": [
+      "projects/email/email.png",
+      "projects/email/email.png"
+    ],
     "desc": "Automated email extraction for insurance ops ML + rule-based classification of Thai-language emails with 80%+ accuracy.",
     "purpose": "Surface critical incoming emails cancellations, missing-document requests, and approval cases automatically, so staff can act on what matters without reading through every message.",
     "outcome": "80%+ classification accuracy in production; email triage fully automated zero manual sorting required per day.",
@@ -110,147 +257,222 @@
       "Async queue via Celery + Redis handles parallel ingestion without blocking, monitored via Flower dashboard",
       "Structured keyword extraction enables recurring analysis of agent workload and issue patterns over time"
     ],
-    "stack": ["Python", "ML/AI" ,"Redis","Celery", "MySQL", "PyThaiNLP", "Docker"],
-    "hue": ["#34d399", "#10b981"],
+    "stack": [
+      "Python",
+      "ML/AI",
+      "Redis",
+      "Celery",
+      "MySQL",
+      "PyThaiNLP",
+      "Docker"
+    ],
+    "hue": [
+      "#34d399",
+      "#10b981"
+    ],
     "links": {}
   },
-   {
-  "id": "cinema-ticket-booking",
-  "name": "Cinema Ticket Booking System",
-  "images": ["projects/cinema/cinema1.png","projects/cinema/cinema2.png"],
-  "tag": "Personal",
-  "status": "Done",
-  "year": "2026",
-  "featured": true,
-  "desc": "An online movie ticket booking app focused on solving the 'two people grabbing the same seat at once' problem.",
-  "purpose": "To build a system that handles real concurrent seat booking — where many users compete for the same seat at the same time — without ever double-booking a seat.",
-  "outcome": "A complete booking flow from seat selection to payment to an admin dashboard, that reliably prevents double-booking even under simultaneous requests.",
-  "longDesc": "A movie ticket booking system where users pick seats from a theater map and get a 5-minute temporary hold to complete payment. During that window, everyone else sees those seats locked in real time, and if payment isn't completed in time the seats are released automatically. The core challenge is guaranteeing that a single seat can only be booked by one person — even when many users tap 'book' within the same split second — solved with Redis for short-lived seat locks and a MongoDB unique index as the final guard against duplicates. It supports both email and Google sign-in, plus an admin panel to review bookings and a full activity audit log.",
-  "highlights": [
-    "Prevents double-booking under concurrent requests using Redis locks + a MongoDB unique index",
-    "Real-time seat map updates over SSE — see seats lock/book instantly with no refresh",
-    "5-minute temporary seat hold that auto-releases if payment isn't completed in time",
-    "Email/password and Google OAuth login with refresh-token rotation",
-    "Admin dashboard for bookings and audit logs with filters",
-    "API and background Worker split into separate processes for independent scaling"
-  ],
-  "stack": ["Go", "Gin", "Nuxt 4", "Tailwind CSS", "MongoDB", "Redis", "RabbitMQ", "SSE", "Docker"],
-  "hue": ["#3b82f6", "#f59e0b"],
-  "links": {"github": "https://github.com/warutboom100/Test-CinamaTicketBooking"}
-}
-
-,{
-  "id": "CarManagementSystem",
-  "name": "Car Management System",
-  "images": ["projects/car/main.png","projects/car/editcar.png","projects/car/addcar.png","projects/car/deletecar.png","projects/car/loginpage.png","projects/car/registerpage.png"],
-  "tag": "Personal",
-  "status": "Done",
-  "year": "2026",
-  "featured": true,
-  "desc": "Full-stack fleet CRUD web app replacing a shared paper logbook JWT auth, searchable car records, activity audit logs, and dark mode.",
-  "purpose": "Replace the company's handwritten car logbook with a shareable web system covering car records, user accounts, and a full audit trail of every change.",
-  "outcome": "Car records digitised into a single shared system replacing the paper logbook with searchable data and a full audit trail of every change.",
-  "longDesc": "A 3-tier car management platform with a Next.js frontend, Express REST API, and PostgreSQL database. Users register and log in via JWT (access + httpOnly refresh token with auto-refresh interceptor), then manage car records through a dashboard with clickable stat-card filters, debounced search, column sorting, color/status dropdown filters, and server-side pagination. Every create/update/delete is written to an activity log in the same transaction, snapshotted so history survives deletion, with created-by/updated-by tracking per record. Hardened with helmet, rate limiting, Zod validation on every input, and Thai-localised error messages.",
-  "highlights": [
-    "Auth with JWT access + httpOnly refresh token, multi-session support, and Axios auto-refresh with request queueing on 401",
-    "Car CRUD with server-side search, status/color filters, sorting, pagination, and transactional activity logs that survive record deletion",
-    "Dockerised 3-tier deploy (Next.js / Express+Knex / Postgres) with 40 Vitest+Supertest tests on an isolated test database"
-  ],
-  "stack": ["Next.js", "React", "TanStackQuery", "Zustand", "Tailwind", "Express", "Knex", "Zod", "PostgreSQL", "Docker", "Vitest"],
-  "hue": ["#3b82f6", "#f59e0b"],
-  "links": {"github": "https://github.com/warutboom100/Test-Haupcar-Car-Management"}
-}
-,
-{
-  "id": "insureflow",
-  "name": "Insurance Renewal Platform",
-  "images": ["projects/renewal/renewal1.PNG","projects/renewal/renewal2.PNG","projects/renewal/renewal3.PNG","projects/renewal/renewal4.PNG","projects/renewal/renewal5.PNG","projects/renewal/renewal6.PNG","projects/renewal/renewal7.PNG"],
-  "tag": "Full-time",
-  "status": "Production",
-  "year": "2025",
-  "featured": true,
-  "desc": "Internal ERP for insurance renewal automated email/SMS reminders, agent call tracking, and KPI dashboards for premium collection.",
-  "purpose": "Replace manual renewal follow-ups with an end-to-end workflow covering policy alerts, batch communications, and agent performance tracking.",
-  "outcome": "Full renewal cycle digitised from policy expiry alerts to batch email/SMS dispatch and call logging with live KPI dashboards for managers.",
-  "longDesc": "An internal insurance renewal platform built for agents and managers to manage the full policy renewal lifecycle. Agents work through a guided multi-step workflow to upload renewal data, preview and send batch email and SMS reminders with urgency-based prioritisation, and log call outcomes per customer lead. Managers get a KPI dashboard with renewal stats, staff performance tables, and color-coded expiry tracking. Includes lead management with task transfer between agents, blacklist/blocklist controls, and Excel export across all reports.",
-  "highlights": [
-    "Multi-step renewal workflow Excel upload → document preview → batch email → batch SMS with urgency levels",
-    "Lead management for agents: per-lead call logging with status, notes, and next-call scheduling; bulk task transfer for managers",
-    "KPI dashboard with renewal stats, monthly bar charts, staff performance tables, and color-coded expiry urgency rows"
-  ],
-  "stack": ["Next.js", "React", "Ant Design", "Node.js", "MySQL","Redis"],
-  "hue": ["#F16363", "#a855f7"],
-  "links": {}
-},
-
   {
-  "id": "robotdashboard",
-  "name": "Robot Energy Dashboard",
-  "tag": "Freelance",
-  "status": "Shipped",
-  "images": ["projects/energy/robot4.PNG","projects/energy/robot1.PNG","projects/energy/robot2.PNG","projects/energy/robot3.PNG","projects/energy/robot5.png"],
-  "year": "2025",
-  "featured": false,
-  "desc": "Real-time energy monitoring dashboard for factory robots tracks power consumption per action and feeds data to an AI agent for analysis.",
-  "purpose": "Give factory engineers visibility into how each robot movement affects electricity usage, and enable AI-assisted analysis without manual data export.",
-  "outcome": "Live energy metrics per robot action; structured data pipeline feeding directly into an LLM for on-demand factory analysis.",
-  "longDesc": "A real-time IoT dashboard that monitors electrical energy consumption of factory robots and machinery. Sensor data streams in over MQTT, stored in MongoDB, and served through a FastAPI backend to a React frontend with live charts. A data agent layer connects the collected readings directly to OpenAI's API giving engineers the ability to ask questions about consumption patterns and anomalies without manually exporting or interpreting raw data.",
-  "highlights": [
-    "MQTT-to-MongoDB pipeline ingesting real-time power consumption per robot movement and action type",
-    "FastAPI backend serves structured time-series data to a React dashboard with live chart updates",
-    "Data agent layer connects factory readings to OpenAI API for on-demand AI-assisted energy analysis"
-  ],
-  "stack": ["React", "FastAPI", "MQTT", "MongoDB", "OpenAI API"],
-  "hue": ["#fcd34d", "#f59e0b"],
-  "links": {
-    "github": "https://github.com/warutboom100/Dashboard_Robot_Energy"
+    "id": "cinema-ticket-booking",
+    "name": "Cinema Ticket Booking System",
+    "images": [
+      "projects/cinema/cinema1.png",
+      "projects/cinema/cinema2.png"
+    ],
+    "tag": "Personal",
+    "status": "Done",
+    "year": "2026",
+    "featured": true,
+    "desc": "An online movie ticket booking app focused on solving the 'two people grabbing the same seat at once' problem.",
+    "purpose": "To build a system that handles real concurrent seat booking — where many users compete for the same seat at the same time — without ever double-booking a seat.",
+    "outcome": "A complete booking flow from seat selection to payment to an admin dashboard, that reliably prevents double-booking even under simultaneous requests.",
+    "longDesc": "A movie ticket booking system where users pick seats from a theater map and get a 5-minute temporary hold to complete payment. During that window, everyone else sees those seats locked in real time, and if payment isn't completed in time the seats are released automatically. The core challenge is guaranteeing that a single seat can only be booked by one person — even when many users tap 'book' within the same split second — solved with Redis for short-lived seat locks and a MongoDB unique index as the final guard against duplicates. It supports both email and Google sign-in, plus an admin panel to review bookings and a full activity audit log.",
+    "highlights": [
+      "Prevents double-booking under concurrent requests using Redis locks + a MongoDB unique index",
+      "Real-time seat map updates over SSE — see seats lock/book instantly with no refresh",
+      "5-minute temporary seat hold that auto-releases if payment isn't completed in time",
+      "Email/password and Google OAuth login with refresh-token rotation",
+      "Admin dashboard for bookings and audit logs with filters",
+      "API and background Worker split into separate processes for independent scaling"
+    ],
+    "stack": [
+      "Go",
+      "Gin",
+      "Nuxt 4",
+      "Tailwind CSS",
+      "MongoDB",
+      "Redis",
+      "RabbitMQ",
+      "SSE",
+      "Docker"
+    ],
+    "hue": [
+      "#3b82f6",
+      "#f59e0b"
+    ],
+    "links": {
+      "github": "https://github.com/warutboom100/Test-CinamaTicketBooking"
+    }
+  },
+  {
+    "id": "CarManagementSystem",
+    "name": "Car Management System",
+    "images": [
+      "projects/car/main.png",
+      "projects/car/editcar.png",
+      "projects/car/addcar.png",
+      "projects/car/deletecar.png",
+      "projects/car/loginpage.png",
+      "projects/car/registerpage.png"
+    ],
+    "tag": "Personal",
+    "status": "Done",
+    "year": "2026",
+    "featured": true,
+    "desc": "Full-stack fleet CRUD web app replacing a shared paper logbook JWT auth, searchable car records, activity audit logs, and dark mode.",
+    "purpose": "Replace the company's handwritten car logbook with a shareable web system covering car records, user accounts, and a full audit trail of every change.",
+    "outcome": "Car records digitised into a single shared system replacing the paper logbook with searchable data and a full audit trail of every change.",
+    "longDesc": "A 3-tier car management platform with a Next.js frontend, Express REST API, and PostgreSQL database. Users register and log in via JWT (access + httpOnly refresh token with auto-refresh interceptor), then manage car records through a dashboard with clickable stat-card filters, debounced search, column sorting, color/status dropdown filters, and server-side pagination. Every create/update/delete is written to an activity log in the same transaction, snapshotted so history survives deletion, with created-by/updated-by tracking per record. Hardened with helmet, rate limiting, Zod validation on every input, and Thai-localised error messages.",
+    "highlights": [
+      "Auth with JWT access + httpOnly refresh token, multi-session support, and Axios auto-refresh with request queueing on 401",
+      "Car CRUD with server-side search, status/color filters, sorting, pagination, and transactional activity logs that survive record deletion",
+      "Dockerised 3-tier deploy (Next.js / Express+Knex / Postgres) with 40 Vitest+Supertest tests on an isolated test database"
+    ],
+    "stack": [
+      "Next.js",
+      "React",
+      "TanStackQuery",
+      "Zustand",
+      "Tailwind",
+      "Express",
+      "Knex",
+      "Zod",
+      "PostgreSQL",
+      "Docker",
+      "Vitest"
+    ],
+    "hue": [
+      "#3b82f6",
+      "#f59e0b"
+    ],
+    "links": {
+      "github": "https://github.com/warutboom100/Test-Haupcar-Car-Management"
+    }
+  },
+  {
+    "id": "robotdashboard",
+    "name": "Robot Energy Dashboard",
+    "tag": "Freelance",
+    "status": "Shipped",
+    "images": [
+      "projects/energy/robot4.PNG",
+      "projects/energy/robot1.PNG",
+      "projects/energy/robot2.PNG",
+      "projects/energy/robot3.PNG",
+      "projects/energy/robot5.png"
+    ],
+    "year": "2025",
+    "featured": false,
+    "desc": "Real-time energy monitoring dashboard for factory robots tracks power consumption per action and feeds data to an AI agent for analysis.",
+    "purpose": "Give factory engineers visibility into how each robot movement affects electricity usage, and enable AI-assisted analysis without manual data export.",
+    "outcome": "Live energy metrics per robot action; structured data pipeline feeding directly into an LLM for on-demand factory analysis.",
+    "longDesc": "A real-time IoT dashboard that monitors electrical energy consumption of factory robots and machinery. Sensor data streams in over MQTT, stored in MongoDB, and served through a FastAPI backend to a React frontend with live charts. A data agent layer connects the collected readings directly to OpenAI's API giving engineers the ability to ask questions about consumption patterns and anomalies without manually exporting or interpreting raw data.",
+    "highlights": [
+      "MQTT-to-MongoDB pipeline ingesting real-time power consumption per robot movement and action type",
+      "FastAPI backend serves structured time-series data to a React dashboard with live chart updates",
+      "Data agent layer connects factory readings to OpenAI API for on-demand AI-assisted energy analysis"
+    ],
+    "stack": [
+      "React",
+      "FastAPI",
+      "MQTT",
+      "MongoDB",
+      "OpenAI API"
+    ],
+    "hue": [
+      "#fcd34d",
+      "#f59e0b"
+    ],
+    "links": {
+      "github": "https://github.com/warutboom100/Dashboard_Robot_Energy"
+    }
+  },
+  {
+    "id": "bver",
+    "name": "BVER - Hospital Porter Tracker",
+    "images": [
+      "projects/bver/bver1.PNG",
+      "projects/bver/bver2.PNG",
+      "projects/bver/bver3.PNG",
+      "projects/bver/bver4.PNG",
+      "projects/bver/bver5.PNG",
+      "projects/bver/bver6.PNG",
+      "projects/bver/bver7.PNG",
+      "projects/bver/bver8.PNG",
+      "projects/bver/bver9.PNG"
+    ],
+    "tag": "Freelance",
+    "status": "Shipped",
+    "year": "2024",
+    "featured": false,
+    "desc": "Indoor localization system for hospital porters real-time BLE positioning, task dispatch, and performance tracking across 3 platforms.",
+    "purpose": "Help hospital coordinators locate and dispatch porters instantly using indoor positioning, replacing radio calls and manual task logging.",
+    "outcome": "3 platforms shipped solo admin dashboard, porter mobile app, and nurse request portal with real-time location tracking via Bluetooth beacons.",
+    "longDesc": "A full indoor localization system built for hospital intralogistics, covering three platforms: a React admin dashboard for coordinators, a Flutter mobile app for porters, and a nurse-facing portal for submitting transport requests. The system uses Bluetooth beacon RSSI signals to pinpoint each porter's real-time location inside the hospital. Porters receive tasks through the app, and all task records count, transport time, distance feed into a performance evaluation system. Built end to end solo with React, FastAPI, and DynamoDB on the web side and Flutter on mobile.",
+    "highlights": [
+      "BLE beacon + RSSI-based indoor positioning tracks each porter's real-time location across hospital zones",
+      "Task dispatch and performance logging job count, transport time, and distance recorded for evaluation",
+      "3 platforms built solo: coordinator dashboard (React), porter mobile app (Flutter), nurse request portal (React)"
+    ],
+    "stack": [
+      "React",
+      "Flutter",
+      "FastAPI",
+      "DynamoDB",
+      "Bluetooth BLE"
+    ],
+    "hue": [
+      "#60a5fa",
+      "#34d399"
+    ],
+    "links": {
+      "github": "https://github.com/warutboom100/BVER_DEMO"
+    }
+  },
+  {
+    "id": "chainlitchat",
+    "name": "Chatbot UI",
+    "tag": "Personal",
+    "images": [
+      "projects/chatbot/bot2.PNG",
+      "projects/chatbot/bot1.PNG"
+    ],
+    "status": "Demo",
+    "year": "2024",
+    "featured": false,
+    "desc": "Conversational AI frontend integrated with a Chainlit backend enabling natural-language interaction between users and an AI-powered knowledge base.",
+    "purpose": "Build a chat interface that lets non-technical users query a knowledge base conversationally, without writing search queries or reading raw documents.",
+    "outcome": "Working RAG-based chatbot UI with real-time streaming responses; connected to Pinecone vector store for semantic retrieval.",
+    "longDesc": "A conversational AI frontend built on top of Chainlit's React client. Users type questions in plain language, the app sends queries to a Chainlit backend that retrieves semantically relevant chunks from a Pinecone vector store, and answers stream back in a chat interface. Focused on making AI-powered search feel natural and accessible for non-technical users.",
+    "highlights": [
+      "React frontend using @chainlit/react-client hooks for real-time chat session and message management",
+      "Semantic retrieval via Pinecone vector store plain-language queries, no keyword matching required",
+      "Streaming response UI so answers appear progressively, reducing perceived wait time"
+    ],
+    "stack": [
+      "React",
+      "Python",
+      "LangChain",
+      "LangGraph",
+      "ChainLit",
+      "RAG"
+    ],
+    "hue": [
+      "#a855f7",
+      "#6366f1"
+    ],
+    "links": {
+      "github": "https://github.com/warutboom100/Chainlit-Clone"
+    }
   }
-},{
-  "id": "bver",
-  "name": "BVER - Hospital Porter Tracker",
-  "images": ["projects/bver/bver1.PNG","projects/bver/bver2.PNG","projects/bver/bver3.PNG","projects/bver/bver4.PNG","projects/bver/bver5.PNG","projects/bver/bver6.PNG","projects/bver/bver7.PNG","projects/bver/bver8.PNG","projects/bver/bver9.PNG"],
-  "tag": "Freelance",
-  "status": "Shipped",
-  "year": "2024",
-  "featured": false,
-  "desc": "Indoor localization system for hospital porters real-time BLE positioning, task dispatch, and performance tracking across 3 platforms.",
-  "purpose": "Help hospital coordinators locate and dispatch porters instantly using indoor positioning, replacing radio calls and manual task logging.",
-  "outcome": "3 platforms shipped solo admin dashboard, porter mobile app, and nurse request portal with real-time location tracking via Bluetooth beacons.",
-  "longDesc": "A full indoor localization system built for hospital intralogistics, covering three platforms: a React admin dashboard for coordinators, a Flutter mobile app for porters, and a nurse-facing portal for submitting transport requests. The system uses Bluetooth beacon RSSI signals to pinpoint each porter's real-time location inside the hospital. Porters receive tasks through the app, and all task records count, transport time, distance feed into a performance evaluation system. Built end to end solo with React, FastAPI, and DynamoDB on the web side and Flutter on mobile.",
-  "highlights": [
-    "BLE beacon + RSSI-based indoor positioning tracks each porter's real-time location across hospital zones",
-    "Task dispatch and performance logging job count, transport time, and distance recorded for evaluation",
-    "3 platforms built solo: coordinator dashboard (React), porter mobile app (Flutter), nurse request portal (React)"
-  ],
-  "stack": ["React", "Flutter", "FastAPI", "DynamoDB", "Bluetooth BLE"],
-  "hue": ["#60a5fa", "#34d399"],
-  "links": {
-    "github": "https://github.com/warutboom100/BVER_DEMO"
-  }
-},
-{
-  "id": "chainlitchat",
-  "name": "Chatbot UI",
-  "tag": "Personal",
-  "images": ["projects/chatbot/bot2.PNG","projects/chatbot/bot1.PNG"],
-  "status": "Demo",
-  "year": "2024",
-  "featured": false,
-  "desc": "Conversational AI frontend integrated with a Chainlit backend enabling natural-language interaction between users and an AI-powered knowledge base.",
-  "purpose": "Build a chat interface that lets non-technical users query a knowledge base conversationally, without writing search queries or reading raw documents.",
-  "outcome": "Working RAG-based chatbot UI with real-time streaming responses; connected to Pinecone vector store for semantic retrieval.",
-  "longDesc": "A conversational AI frontend built on top of Chainlit's React client. Users type questions in plain language, the app sends queries to a Chainlit backend that retrieves semantically relevant chunks from a Pinecone vector store, and answers stream back in a chat interface. Focused on making AI-powered search feel natural and accessible for non-technical users.",
-  "highlights": [
-    "React frontend using @chainlit/react-client hooks for real-time chat session and message management",
-    "Semantic retrieval via Pinecone vector store plain-language queries, no keyword matching required",
-    "Streaming response UI so answers appear progressively, reducing perceived wait time"
-  ],
-  "stack": ["React","Python","LangChain","LangGraph" ,"ChainLit", "RAG"],
-  "hue": ["#a855f7", "#6366f1"],
-  "links": {
-    "github": "https://github.com/warutboom100/Chainlit-Clone"
-  }
-}
-
-
 ]
