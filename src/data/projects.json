@@ -17,7 +17,7 @@
     "projects/his/department.png",
     "projects/his/new_department.png"
   ],
-  "year": "2025",
+  "year": "2026",
   "featured": true,
   "desc": "A hospital appointment management web app that helps staff instantly find available doctor slots and book patient visits with zero double-booking.",
   "purpose": "To simplify outpatient scheduling for hospital staff, eliminating manual booking errors and reducing patient waiting times.",
