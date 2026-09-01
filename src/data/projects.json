@@ -1,4 +1,53 @@
-[
+[{
+  "id": "appointment-booking-module",
+  "name": "Hospital Outpatient Appointment Booking System",
+  "tag": "Personal",
+  "status": "Completed",
+  "images": [
+    "projects/his/dashboard.png",
+    "projects/his/appointments.png",
+    "projects/his/new_appointments.png",
+    "projects/his/doctor_schedules.png",
+    "projects/his/edit_schedules.png",
+    "projects/his/override.png",
+    "projects/his/patients.png",
+    "projects/his/new_patients.png",
+    "projects/his/doctor.png",
+    "projects/his/new_doctor.png",
+    "projects/his/department.png",
+    "projects/his/new_department.png"
+  ],
+  "year": "2025",
+  "featured": true,
+  "desc": "A hospital appointment management web app that helps staff instantly find available doctor slots and book patient visits with zero double-booking.",
+  "purpose": "To simplify outpatient scheduling for hospital staff, eliminating manual booking errors and reducing patient waiting times.",
+  "outcome": "Instant available slot calculation by visit type, flexible doctor leave management, and 100% collision-free booking.",
+  "longDesc": "Designed for hospital outpatient departments (OPD), this system enables receptionists and clinic staff to easily view doctor schedules, find suitable openings based on visit types (e.g., 30-minute new visits vs. 15-minute follow-ups), and track patient queues in real time. It features automatic conflict prevention to ensure two staff members never book the same doctor at the same time.",
+  "highlights": [
+    "Automatic slot calculation based on appointment duration with break times excluded",
+    "Pessimistic concurrency locking to completely prevent double-booking collisions",
+    "Doctor schedule management supporting weekly shifts and per-date leave overrides",
+    "Live clinic dashboard with real-time patient queue and status tracking"
+  ],
+  "stack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Tailwind CSS",
+    "Docker"
+  ],
+  "hue": [
+    "#0284c7",
+    "#0d9488"
+  ],
+  "links": {
+    "github": "https://github.com/warutboom100/Appointment-Booking-Module"
+  }
+}
+,
   {
     "id": "food-agent",
     "name": "Kitchen Recall Assistant",
@@ -85,48 +134,7 @@
     ],
     "links": {}
   },
-  {
-    "id": "counter-service-platform",
-    "name": "Counter Service Payment Platform",
-    "tag": "Personal",
-    "status": "Demo",
-    "year": "2026",
-    "images": [
-      "projects/counter/counter1.PNG",
-      "projects/counter/counter2.PNG",
-      "projects/counter/counter2.PNG",
-      "projects/counter/counter3.PNG",
-      "projects/counter/counter4.PNG",
-      "projects/counter/counter5.PNG",
-      "projects/counter/counter6.PNG",
-      "projects/counter/counter7.PNG",
-      "projects/counter/counter8.PNG",
-      "projects/counter/counter9.PNG"
-    ],
-    "featured": true,
-    "desc": "Production-grade microservice platform simulating Counter Service (CP Group) business domains — Concert Ticket Booking with flash-sale concurrency handling and Bill Payment with double-charge protection.",
-    "purpose": "Built to explore microservice architecture patterns in a realistic business context — payment flows, concurrency handling, and distributed event delivery across multiple services.",
-    "outcome": "4 backend microservices + Next.js dashboard communicating via Redis Streams, with atomic seat locking, idempotency guarantees, webhook delivery, and a reserve-then-pay booking flow.",
-    "highlights": [
-      "Atomic Redis seat locking (DECR + SET NX) — prevents double booking without DB pessimistic locks",
-      "Two-phase idempotency key pattern — protects against duplicate payments and race conditions",
-      "Outbox pattern with Redis Streams consumer groups — durable event delivery across services",
-      "Reserve-then-pay flow — seat held 10 min, auto-released by expiry worker if unpaid",
-      "HMAC-SHA256 signed webhooks with exponential retry and dead letter queue",
-      "API Gateway with JWT auth, API Key middleware, and proxy routing to all downstream services"
-    ],
-    "stack": [
-      "Node.js",
-      "Next.js",
-      "PostgreSQL",
-      "Redis"
-    ],
-    "hue": [
-      "#E2A92D",
-      "#DDA846"
-    ],
-    "links": {}
-  },
+ 
   {
     "id": "plcmachine",
     "name": "Food Sterilization Machine",
@@ -438,41 +446,6 @@
     "links": {
       "github": "https://github.com/warutboom100/BVER_DEMO"
     }
-  },
-  {
-    "id": "chainlitchat",
-    "name": "Chatbot UI",
-    "tag": "Personal",
-    "images": [
-      "projects/chatbot/bot2.PNG",
-      "projects/chatbot/bot1.PNG"
-    ],
-    "status": "Demo",
-    "year": "2024",
-    "featured": false,
-    "desc": "Conversational AI frontend integrated with a Chainlit backend enabling natural-language interaction between users and an AI-powered knowledge base.",
-    "purpose": "Build a chat interface that lets non-technical users query a knowledge base conversationally, without writing search queries or reading raw documents.",
-    "outcome": "Working RAG-based chatbot UI with real-time streaming responses; connected to Pinecone vector store for semantic retrieval.",
-    "longDesc": "A conversational AI frontend built on top of Chainlit's React client. Users type questions in plain language, the app sends queries to a Chainlit backend that retrieves semantically relevant chunks from a Pinecone vector store, and answers stream back in a chat interface. Focused on making AI-powered search feel natural and accessible for non-technical users.",
-    "highlights": [
-      "React frontend using @chainlit/react-client hooks for real-time chat session and message management",
-      "Semantic retrieval via Pinecone vector store plain-language queries, no keyword matching required",
-      "Streaming response UI so answers appear progressively, reducing perceived wait time"
-    ],
-    "stack": [
-      "React",
-      "Python",
-      "LangChain",
-      "LangGraph",
-      "ChainLit",
-      "RAG"
-    ],
-    "hue": [
-      "#a855f7",
-      "#6366f1"
-    ],
-    "links": {
-      "github": "https://github.com/warutboom100/Chainlit-Clone"
-    }
   }
+  
 ]
