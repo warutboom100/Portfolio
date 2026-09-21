@@ -1,53 +1,89 @@
-[{
-  "id": "appointment-booking-module",
-  "name": "Hospital Outpatient Appointment Booking System",
-  "tag": "Personal",
-  "status": "Completed",
-  "images": [
-    "projects/his/dashboard.png",
-    "projects/his/appointments.png",
-    "projects/his/new_appointments.png",
-    "projects/his/doctor_schedules.png",
-    "projects/his/edit_schedules.png",
-    "projects/his/override.png",
-    "projects/his/patients.png",
-    "projects/his/new_patients.png",
-    "projects/his/doctor.png",
-    "projects/his/new_doctor.png",
-    "projects/his/department.png",
-    "projects/his/new_department.png"
-  ],
-  "year": "2026",
-  "featured": true,
-  "desc": "A hospital appointment management web app that helps staff instantly find available doctor slots and book patient visits with zero double-booking.",
-  "purpose": "To simplify outpatient scheduling for hospital staff, eliminating manual booking errors and reducing patient waiting times.",
-  "outcome": "Instant available slot calculation by visit type, flexible doctor leave management, and 100% collision-free booking.",
-  "longDesc": "Designed for hospital outpatient departments (OPD), this system enables receptionists and clinic staff to easily view doctor schedules, find suitable openings based on visit types (e.g., 30-minute new visits vs. 15-minute follow-ups), and track patient queues in real time. It features automatic conflict prevention to ensure two staff members never book the same doctor at the same time.",
-  "highlights": [
-    "Automatic slot calculation based on appointment duration with break times excluded",
-    "Pessimistic concurrency locking to completely prevent double-booking collisions",
-    "Doctor schedule management supporting weekly shifts and per-date leave overrides",
-    "Live clinic dashboard with real-time patient queue and status tracking"
-  ],
-  "stack": [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Node.js",
-    "Express",
-    "PostgreSQL",
-    "Tailwind CSS",
-    "Docker"
-  ],
-  "hue": [
-    "#0284c7",
-    "#0d9488"
-  ],
-  "links": {
-    "github": "https://github.com/warutboom100/Appointment-Booking-Module"
-  }
-}
-,
+[
+  {
+    "id": "plcfactory",
+    "name": "PLC Hard Disk Assembly Simulation",
+    "images": [
+      "projects/factory/factory0.png",
+      "projects/factory/factory1.png",
+      "projects/factory/factory2.png",
+      "projects/factory/factory3.png"
+    ],
+    "tag": "Personal",
+    "status": "In-progress",
+    "year": "2026",
+    "featured": true,
+    "desc": "Simulated hard disk assembly line with color-based sorting, built with Factory IO and GX Works 3.",
+    "purpose": "To simulate and control an automated assembly line that sorts hard disks by color using a PLC-based system.",
+    "outcome": "Successfully simulated a full assembly and sorting process in Factory IO, controlled via Mitsubishi PLC logic written in GX Works 3 and connected through MX OPC.",
+    "longDesc": "A personal PLC project that simulates a hard disk assembly line using Factory IO as the 3D virtual environment. The system uses a conveyor-based layout with robotic arms and color sensors to automatically sort hard disks by color. PLC ladder logic is programmed in GX Works 3 and communicates with the simulation via MX OPC, replicating real industrial automation workflows.",
+    "highlights": [
+      "3D factory simulation with conveyor belts and a robotic arm in Factory IO",
+      "Color-based sorting logic programmed in GX Works 3 ladder diagram",
+      "PLC-to-simulation communication via MX OPC server",
+      "Replicates real industrial automation workflows in a virtual environment"
+    ],
+    "stack": [
+      "Factory IO",
+      "GX Works 3",
+      "MX OPC"
+    ],
+    "hue": [
+      "#10B1AF",
+      "#24D4CA"
+    ],
+    "links": {
+      "github": "https://github.com/warutboom100/PLC-Hard-Disk-Assembly-Simulation"
+    }
+  },
+  {
+    "id": "appointment-booking-module",
+    "name": "Hospital Outpatient Appointment Booking System",
+    "tag": "Personal",
+    "status": "Completed",
+    "images": [
+      "projects/his/dashboard.png",
+      "projects/his/appointments.png",
+      "projects/his/new_appointments.png",
+      "projects/his/doctor_schedules.png",
+      "projects/his/edit_schedules.png",
+      "projects/his/override.png",
+      "projects/his/patients.png",
+      "projects/his/new_patients.png",
+      "projects/his/doctor.png",
+      "projects/his/new_doctor.png",
+      "projects/his/department.png",
+      "projects/his/new_department.png"
+    ],
+    "year": "2026",
+    "featured": true,
+    "desc": "A hospital appointment management web app that helps staff instantly find available doctor slots and book patient visits with zero double-booking.",
+    "purpose": "To simplify outpatient scheduling for hospital staff, eliminating manual booking errors and reducing patient waiting times.",
+    "outcome": "Instant available slot calculation by visit type, flexible doctor leave management, and 100% collision-free booking.",
+    "longDesc": "Designed for hospital outpatient departments (OPD), this system enables receptionists and clinic staff to easily view doctor schedules, find suitable openings based on visit types (e.g., 30-minute new visits vs. 15-minute follow-ups), and track patient queues in real time. It features automatic conflict prevention to ensure two staff members never book the same doctor at the same time.",
+    "highlights": [
+      "Automatic slot calculation based on appointment duration with break times excluded",
+      "Pessimistic concurrency locking to completely prevent double-booking collisions",
+      "Doctor schedule management supporting weekly shifts and per-date leave overrides",
+      "Live clinic dashboard with real-time patient queue and status tracking"
+    ],
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Docker"
+    ],
+    "hue": [
+      "#0284c7",
+      "#0d9488"
+    ],
+    "links": {
+      "github": "https://github.com/warutboom100/Appointment-Booking-Module"
+    }
+  },
   {
     "id": "food-agent",
     "name": "Kitchen Recall Assistant",
@@ -134,7 +170,6 @@
     ],
     "links": {}
   },
- 
   {
     "id": "plcmachine",
     "name": "Food Sterilization Machine",
@@ -447,5 +482,4 @@
       "github": "https://github.com/warutboom100/BVER_DEMO"
     }
   }
-  
 ]
