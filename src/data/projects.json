@@ -53,6 +53,78 @@
     "github": "https://github.com/warutboom100/PLC-Hard-Disk-Assembly-Simulation"
   }
 },
+{
+    "id": "plcmachine",
+    "name": "Food Sterilization Machine",
+    "images": [
+      "projects/plc/plc1.jpg",
+      "projects/plc/plc2.jpg",
+      "projects/plc/plc3.jpg",
+      "projects/plc/plc4.jpg"
+    ],
+    "tag": "Freelance",
+    "status": "Production",
+    "year": "2025",
+    "featured": true,
+    "desc": "Real-time monitoring dashboard for a PLC based food sterilization machine.",
+    "purpose": "To remotely monitor temperature and pressure for food sterilization, replacing manual checks with an online dashboard.",
+    "outcome": "Delivered a realtime web dashboard that tracks critical sterilization metrics, ensuring food safety and reducing manual on site checks.",
+    "longDesc": "A web based monitoring system designed for food sterilization processes. The system connects directly to industrial PLCs to track critical parameters like temperature and pressure in realtime. This allows operators to monitor sterilization cycles remotely through an intuitive online dashboard, ensuring consistent food safety compliance and operational efficiency without the need for constant physical supervision.",
+    "highlights": [
+      "PLC integration for realtime temperature and pressure tracking",
+      "Online dashboard for remote monitoring of sterilization cycles",
+      "Automated data logging for food safety compliance and quality control",
+      "Replaced manual on site checks with a centralized web interface"
+    ],
+    "stack": [
+      "GXWork3",
+      "Electric wiring",
+      "Networking"
+    ],
+    "hue": [
+      "#10B1AF",
+      "#24D4CA"
+    ],
+    "links": {}
+  },
+  {
+    "id": "robotdashboard",
+    "name": "Robot Energy Dashboard",
+    "tag": "Freelance",
+    "status": "Shipped",
+    "images": [
+      "projects/energy/robot4.PNG",
+      "projects/energy/robot1.PNG",
+      "projects/energy/robot2.PNG",
+      "projects/energy/robot3.PNG",
+      "projects/energy/robot5.png"
+    ],
+    "year": "2025",
+    "featured": false,
+    "desc": "Real-time energy monitoring dashboard for factory robots tracks power consumption per action and feeds data to an AI agent for analysis.",
+    "purpose": "Give factory engineers visibility into how each robot movement affects electricity usage, and enable AI-assisted analysis without manual data export.",
+    "outcome": "Live energy metrics per robot action; structured data pipeline feeding directly into an LLM for on-demand factory analysis.",
+    "longDesc": "A real-time IoT dashboard that monitors electrical energy consumption of factory robots and machinery. Sensor data streams in over MQTT, stored in MongoDB, and served through a FastAPI backend to a React frontend with live charts. A data agent layer connects the collected readings directly to OpenAI's API giving engineers the ability to ask questions about consumption patterns and anomalies without manually exporting or interpreting raw data.",
+    "highlights": [
+      "MQTT-to-MongoDB pipeline ingesting real-time power consumption per robot movement and action type",
+      "FastAPI backend serves structured time-series data to a React dashboard with live chart updates",
+      "Data agent layer connects factory readings to OpenAI API for on-demand AI-assisted energy analysis"
+    ],
+    "stack": [
+      "React",
+      "FastAPI",
+      "MQTT",
+      "MongoDB",
+      "OpenAI API"
+    ],
+    "hue": [
+      "#fcd34d",
+      "#f59e0b"
+    ],
+    "links": {
+      "github": "https://github.com/warutboom100/Dashboard_Robot_Energy"
+    }
+  },
   {
     "id": "appointment-booking-module",
     "name": "Hospital Outpatient Appointment Booking System",
@@ -188,40 +260,7 @@
     ],
     "links": {}
   },
-  {
-    "id": "plcmachine",
-    "name": "Food Sterilization Machine",
-    "images": [
-      "projects/plc/plc1.jpg",
-      "projects/plc/plc2.jpg",
-      "projects/plc/plc3.jpg",
-      "projects/plc/plc4.jpg"
-    ],
-    "tag": "Freelance",
-    "status": "Production",
-    "year": "2025",
-    "featured": true,
-    "desc": "Real-time monitoring dashboard for a PLC based food sterilization machine.",
-    "purpose": "To remotely monitor temperature and pressure for food sterilization, replacing manual checks with an online dashboard.",
-    "outcome": "Delivered a realtime web dashboard that tracks critical sterilization metrics, ensuring food safety and reducing manual on site checks.",
-    "longDesc": "A web based monitoring system designed for food sterilization processes. The system connects directly to industrial PLCs to track critical parameters like temperature and pressure in realtime. This allows operators to monitor sterilization cycles remotely through an intuitive online dashboard, ensuring consistent food safety compliance and operational efficiency without the need for constant physical supervision.",
-    "highlights": [
-      "PLC integration for realtime temperature and pressure tracking",
-      "Online dashboard for remote monitoring of sterilization cycles",
-      "Automated data logging for food safety compliance and quality control",
-      "Replaced manual on site checks with a centralized web interface"
-    ],
-    "stack": [
-      "GXWork3",
-      "Electric wiring",
-      "Networking"
-    ],
-    "hue": [
-      "#10B1AF",
-      "#24D4CA"
-    ],
-    "links": {}
-  },
+  
   {
     "id": "hrplatform",
     "name": "HRM Platform (ERP)",
@@ -418,44 +457,6 @@
     ],
     "links": {
       "github": "https://github.com/warutboom100/Test-Haupcar-Car-Management"
-    }
-  },
-  {
-    "id": "robotdashboard",
-    "name": "Robot Energy Dashboard",
-    "tag": "Freelance",
-    "status": "Shipped",
-    "images": [
-      "projects/energy/robot4.PNG",
-      "projects/energy/robot1.PNG",
-      "projects/energy/robot2.PNG",
-      "projects/energy/robot3.PNG",
-      "projects/energy/robot5.png"
-    ],
-    "year": "2025",
-    "featured": false,
-    "desc": "Real-time energy monitoring dashboard for factory robots tracks power consumption per action and feeds data to an AI agent for analysis.",
-    "purpose": "Give factory engineers visibility into how each robot movement affects electricity usage, and enable AI-assisted analysis without manual data export.",
-    "outcome": "Live energy metrics per robot action; structured data pipeline feeding directly into an LLM for on-demand factory analysis.",
-    "longDesc": "A real-time IoT dashboard that monitors electrical energy consumption of factory robots and machinery. Sensor data streams in over MQTT, stored in MongoDB, and served through a FastAPI backend to a React frontend with live charts. A data agent layer connects the collected readings directly to OpenAI's API giving engineers the ability to ask questions about consumption patterns and anomalies without manually exporting or interpreting raw data.",
-    "highlights": [
-      "MQTT-to-MongoDB pipeline ingesting real-time power consumption per robot movement and action type",
-      "FastAPI backend serves structured time-series data to a React dashboard with live chart updates",
-      "Data agent layer connects factory readings to OpenAI API for on-demand AI-assisted energy analysis"
-    ],
-    "stack": [
-      "React",
-      "FastAPI",
-      "MQTT",
-      "MongoDB",
-      "OpenAI API"
-    ],
-    "hue": [
-      "#fcd34d",
-      "#f59e0b"
-    ],
-    "links": {
-      "github": "https://github.com/warutboom100/Dashboard_Robot_Energy"
     }
   },
   {
